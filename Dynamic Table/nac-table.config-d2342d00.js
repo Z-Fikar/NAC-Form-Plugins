@@ -4,7 +4,7 @@ const config = {
   groupName: 'Elistec Form Controls',
   fallbackDisableSubmit: false,
   standardProperties: {
-    readOnly: false,
+    readOnly: true,
     required: false,
     description: true
   },
