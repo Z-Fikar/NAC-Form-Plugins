@@ -603,7 +603,7 @@ let AndysTable = _decorate(
         {
           kind: "method",
           key: "isValidDate",
-          value: function isValidDate() {
+          value: function isValidDate(dateString) {
             const date = new Date(dateString);
             return !isNaN(date.getTime());
           },
