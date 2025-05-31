@@ -780,7 +780,7 @@ let AndysTable = _decorate(
                 <table>
                   <thead>
                     <tr>
-                      <th>No</th>
+                      <th style="text-align: right">No</th>
                       ${this.columns.map(
                         (column) => y`
                           <th @click="${() => this.onSortClick(column.field)}">
