@@ -897,7 +897,7 @@ let AndysTable = _decorate(
             const start = (this.currentPage - 1) * this.pageSize + 1;
             const end = Math.min(start + this.pageSize - 1, this.filteredData.length);
             const total = this.filteredData.length;
-            console.log("PAGINATION", start, end, total);
+            console.log("PAGINATION", start, start + this.pageSize - 1, end, total);
 
             return y`
               <div class="pagination">
