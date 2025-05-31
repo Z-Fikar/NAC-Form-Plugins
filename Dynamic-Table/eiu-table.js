@@ -22,6 +22,12 @@ table {
   color: rgba(0, 0, 0, 0.87);
   background-color: #fff;
 }
+.d-none{
+    display: none;
+}
+.v-hidden{
+    visibility: hidden;
+}
 
 th,
 td {
@@ -253,56 +259,50 @@ _decorate(
           key: "styles",
           value: function styles() {
             return i`
-      :host {
-        background-color: rgba(0, 0, 0, 0.04);
-        border-radius: 4px;
-        width: 100%;
-        max-width: 420px;
-      }
-      .button-wrapper {
-        box-sizing: border-box;
-        height: 56px;
-        padding: 16.5px 14px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .d-none{
-          display: none;
-      }
-      .v-hidden{
-          visibility: hidden;
-      }
+              :host {
+                background-color: rgba(0, 0, 0, 0.04);
+                border-radius: 4px;
+                width: 100%;
+                max-width: 420px;
+              }
+              .button-wrapper {
+                box-sizing: border-box;
+                height: 56px;
+                padding: 16.5px 14px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              }
 
-      button {
-        background-color: transparent;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        border: none;
-        outline: none;
-        padding: 8px;
-        margin: 0;
-      }
+              button {
+                background-color: transparent;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                border: none;
+                outline: none;
+                padding: 8px;
+                margin: 0;
+              }
 
-      .delete {
-        color: #d32f2f;
-      }
+              .delete {
+                color: #d32f2f;
+              }
 
-      button:hover {
-        text-decoration: underline;
-      }
+              button:hover {
+                text-decoration: underline;
+              }
 
-      button:disabled {
-        text-decoration: none;
-        cursor: default;
-        color: rgba(0, 0, 0, 0.3);
-      }
+              button:disabled {
+                text-decoration: none;
+                cursor: default;
+                color: rgba(0, 0, 0, 0.3);
+              }
 
-      button > svg {
-        margin-right: 2px;
-      }
-    `;
+              button > svg {
+                margin-right: 2px;
+              }
+            `;
           },
         },
         {
