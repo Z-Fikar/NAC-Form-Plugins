@@ -23,7 +23,7 @@ table {
   background-color: #fff;
 }
 .d-none{
-    display: none;
+    display: none !important;
 }
 .v-hidden{
     visibility: hidden;
