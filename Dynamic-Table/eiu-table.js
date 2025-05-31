@@ -411,6 +411,7 @@ let AndysTable = _decorate(
     class AndysTable extends _LitElement {
       constructor(...args) {
         super(...args);
+        this.searchable = true;
         _initialize(this);
       }
     }
