@@ -1,4 +1,4 @@
-import { i, _ as _decorate, s, e, y, a as e$1 } from "./query-assigned-elements-8a604587.js";
+import { i, _ as _decorate, s, e, y, a as e$1 } from "./query-assigned-elements.js";
 
 const baseStyle = i`
   :host {
@@ -307,93 +307,93 @@ _decorate(
           key: "render",
           value: function render() {
             return y`
-      <div class="button-wrapper">
-        <button
-          @click="${() => this.dispatchEvent(new CustomEvent("add-row"))}"
-        >
-          <svg
-            height="18px"
-            width="18px"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-          </svg>
-          Add
-        </button>
-        <button
-          @click="${() => this.dispatchEvent(new CustomEvent("edit-row"))}"
-          ?disabled="${!this.hasSelectedRow}"
-        >
-          <svg
-            height="18px"
-            width="18px"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 22 22"
-            fill="currentColor"
-          >
-            <path
-              d="M16 2H17V3H18V4H19V5H20V6H19V7H18V8H17V7H16V6H15V5H14V4H15V3H16M12 6H14V7H15V8H16V10H15V11H14V12H13V13H12V14H11V15H10V16H9V17H8V18H7V19H6V20H2V16H3V15H4V14H5V13H6V12H7V11H8V10H9V9H10V8H11V7H12"
-            />
-          </svg>
-          Edit
-        </button>
-        <button
-          @click="${() => this.dispatchEvent(new CustomEvent("discard-row"))}"
-          ?disabled="${!this.editMode}"
-        >
-          <svg
-            height="18px"
-            fill="currentColor"
-            width="18px"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M13.5,7A6.5,6.5 0 0,1 20,13.5A6.5,6.5 0 0,1 13.5,20H10V18H13.5C16,18 18,16 18,13.5C18,11 16,9 13.5,9H7.83L10.91,12.09L9.5,13.5L4,8L9.5,2.5L10.92,3.91L7.83,7H13.5M6,18H8V20H6V18Z"
-            />
-          </svg>
+              <div class="button-wrapper">
+                <button
+                  @click="${() => this.dispatchEvent(new CustomEvent("add-row"))}"
+                >
+                  <svg
+                    height="18px"
+                    width="18px"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                  </svg>
+                  Add
+                </button>
+                <button
+                  @click="${() => this.dispatchEvent(new CustomEvent("edit-row"))}"
+                  ?disabled="${!this.hasSelectedRow}"
+                >
+                  <svg
+                    height="18px"
+                    width="18px"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 22 22"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M16 2H17V3H18V4H19V5H20V6H19V7H18V8H17V7H16V6H15V5H14V4H15V3H16M12 6H14V7H15V8H16V10H15V11H14V12H13V13H12V14H11V15H10V16H9V17H8V18H7V19H6V20H2V16H3V15H4V14H5V13H6V12H7V11H8V10H9V9H10V8H11V7H12"
+                    />
+                  </svg>
+                  Edit
+                </button>
+                <button
+                  @click="${() => this.dispatchEvent(new CustomEvent("discard-row"))}"
+                  ?disabled="${!this.editMode}"
+                >
+                  <svg
+                    height="18px"
+                    fill="currentColor"
+                    width="18px"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M13.5,7A6.5,6.5 0 0,1 20,13.5A6.5,6.5 0 0,1 13.5,20H10V18H13.5C16,18 18,16 18,13.5C18,11 16,9 13.5,9H7.83L10.91,12.09L9.5,13.5L4,8L9.5,2.5L10.92,3.91L7.83,7H13.5M6,18H8V20H6V18Z"
+                    />
+                  </svg>
 
-          Discard
-        </button>
-        <button
-          @click="${() => this.dispatchEvent(new CustomEvent("save-row"))}"
-          ?disabled="${!this.editMode}"
-        >
-          <svg
-            height="18px"
-            fill="currentColor"
-            width="18px"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M17 3H5C3.9 3 3 3.9 3 5V19C3 20.11 3.9 21 5 21H11.81C11.42 20.34 11.17 19.6 11.07 18.84C9.5 18.31 8.66 16.6 9.2 15.03C9.61 13.83 10.73 13 12 13C12.44 13 12.88 13.1 13.28 13.29C15.57 11.5 18.83 11.59 21 13.54V7L17 3M15 9H5V5H15V9M15.75 21L13 18L14.16 16.84L15.75 18.43L19.34 14.84L20.5 16.25L15.75 21"
-            />
-          </svg>
-          Save
-        </button>
-        <button
-          class="delete"
-          @click="${() => this.dispatchEvent(new CustomEvent("delete-row"))}"
-          ?disabled="${!this.hasSelectedRow}"
-        >
-          <svg
-            height="18px"
-            width="18px"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path
-              d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
-            />
-          </svg>
-          Delete
-        </button>
-      </div>
-    `;
+                  Discard
+                </button>
+                <button
+                  @click="${() => this.dispatchEvent(new CustomEvent("save-row"))}"
+                  ?disabled="${!this.editMode}"
+                >
+                  <svg
+                    height="18px"
+                    fill="currentColor"
+                    width="18px"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17 3H5C3.9 3 3 3.9 3 5V19C3 20.11 3.9 21 5 21H11.81C11.42 20.34 11.17 19.6 11.07 18.84C9.5 18.31 8.66 16.6 9.2 15.03C9.61 13.83 10.73 13 12 13C12.44 13 12.88 13.1 13.28 13.29C15.57 11.5 18.83 11.59 21 13.54V7L17 3M15 9H5V5H15V9M15.75 21L13 18L14.16 16.84L15.75 18.43L19.34 14.84L20.5 16.25L15.75 21"
+                    />
+                  </svg>
+                  Save
+                </button>
+                <button
+                  class="delete"
+                  @click="${() => this.dispatchEvent(new CustomEvent("delete-row"))}"
+                  ?disabled="${!this.hasSelectedRow}"
+                >
+                  <svg
+                    height="18px"
+                    width="18px"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+                    />
+                  </svg>
+                  Delete
+                </button>
+              </div>
+            `;
           },
         },
       ],
@@ -444,6 +444,18 @@ let AndysTable = _decorate(
           key: "readOnly",
           value() {
             return false;
+          },
+        },
+        {
+          kind: "field",
+          decorators: [
+            e({
+              type: String,
+            }),
+          ],
+          key: "visibility",
+          value() {
+            return true;
           },
         },
         {
@@ -529,17 +541,13 @@ let AndysTable = _decorate(
         {
           kind: "get",
           key: "filteredData",
-          value:
-            // @property({ type: Boolean })
-            // readOnly = false;
-
-            function filteredData() {
-              return this.data.filter((item) => {
-                return Object.values(item)
-                  .map((val) => String(val))
-                  .some((val) => val.toLowerCase().includes(this.searchText.toLowerCase()));
-              });
-            },
+          value: function filteredData() {
+            return this.data.filter((item) => {
+              return Object.values(item)
+                .map((val) => String(val))
+                .some((val) => val.toLowerCase().includes(this.searchText.toLowerCase()));
+            });
+          },
         },
         {
           kind: "get",
@@ -587,7 +595,7 @@ let AndysTable = _decorate(
           static: true,
           key: "getMetaConfig",
           value: function getMetaConfig() {
-            return import("./nac-table.config-d2342d00.js").then((x) => x.config);
+            return import("./nac-table.config.js").then((x) => x.config);
           },
         },
         {
@@ -661,8 +669,6 @@ let AndysTable = _decorate(
               this.updatePageData();
             }
           },
-
-          // Handle edit event for a cell
         },
         {
           kind: "method",
@@ -684,12 +690,12 @@ let AndysTable = _decorate(
           key: "render",
           value: function render() {
             return y`
-      <div class="top-panel">
-        ${this.renderSearch()} ${this.readOnly ? null : this.renderToolbar()}
-      </div>
-      <br />
-      ${this.renderTable()}
-    `;
+              <div class="top-panel">
+                ${this.renderSearch()} ${this.readOnly ? null : this.renderToolbar()}
+              </div>
+              <br />
+              ${this.renderTable()}
+            `;
           },
         },
         {
@@ -697,28 +703,28 @@ let AndysTable = _decorate(
           key: "renderSearch",
           value: function renderSearch() {
             return y`<div class="search-wrapper">
-      <svg
-        class="search-icon"
-        height="24px"
-        width="24px"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M9.5,4C13.09,4 16,6.91 16,10.5C16,12.12 15.41,13.6 14.43,14.73L20.08,20.38L19.37,21.09L13.72,15.44C12.59,16.41 11.11,17 9.5,17C5.91,17 3,14.09 3,10.5C3,6.91 5.91,4 9.5,4M9.5,5C6.46,5 4,7.46 4,10.5C4,13.54 6.46,16 9.5,16C12.54,16 15,13.54 15,10.5C15,7.46 12.54,5 9.5,5Z"
-        />
-      </svg>
-      <input
-        class="search-input input-styled"
-        id="search-input"
-        placeholder="Search..."
+              <svg
+                class="search-icon"
+                height="24px"
+                width="24px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9.5,4C13.09,4 16,6.91 16,10.5C16,12.12 15.41,13.6 14.43,14.73L20.08,20.38L19.37,21.09L13.72,15.44C12.59,16.41 11.11,17 9.5,17C5.91,17 3,14.09 3,10.5C3,6.91 5.91,4 9.5,4M9.5,5C6.46,5 4,7.46 4,10.5C4,13.54 6.46,16 9.5,16C12.54,16 15,13.54 15,10.5C15,7.46 12.54,5 9.5,5Z"
+                />
+              </svg>
+              <input
+                class="search-input input-styled"
+                id="search-input"
+                placeholder="Search..."
 
-        @input=${(event) => {
-          this.searchText = event.target.value;
-          this.updatePageData();
-        }}
-      />
-    </div> `;
+                @input=${(event) => {
+                  this.searchText = event.target.value;
+                  this.updatePageData();
+                }}
+              />
+            </div> `;
           },
         },
         {
@@ -726,17 +732,16 @@ let AndysTable = _decorate(
           key: "renderToolbar",
           value: function renderToolbar() {
             return y`
-      <eiu-toolbar
-        @add-row="${this.onAddRow}"
-        @edit-row="${this.onEditRow}"
-        @delete-row="${this.onDeleteRow}"
-        @save-row="${this.onSaveRow}"
-        @discard-row="${this.onDiscardRow}"
-        .editMode="${this.editMode}"
-        .hasSelectedRow="${!!this.selectedRow}"
-        
-      ></eiu-toolbar>
-    `;
+              <eiu-toolbar
+                @add-row="${this.onAddRow}"
+                @edit-row="${this.onEditRow}"
+                @delete-row="${this.onDeleteRow}"
+                @save-row="${this.onSaveRow}"
+                @discard-row="${this.onDiscardRow}"
+                .editMode="${this.editMode}"
+                .hasSelectedRow="${!!this.selectedRow}"
+              ></eiu-toolbar>
+            `;
           },
         },
         {
@@ -747,146 +752,142 @@ let AndysTable = _decorate(
             const end = start + this.pageSize;
             this.pageData = this.sortedData.slice(start, end);
             return y`
-
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              ${this.columns.map(
-                (column) => y`
-                  <th @click="${() => this.onSortClick(column.field)}">
-                    ${y`<span class="flex-item">
-                      ${column.label}
-                      ${
-                        this.tableSort.direction === "asc"
-                          ? y`<svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            height="18px"
-                            width="18px"
-                            opacity="0"
-                            class="margin-left-4 ${this.tableSort.field === column.field ? "opacity" : ""}"
-                          >
-                            <path
-                              d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
-                            />
-                          </svg>`
-                          : y`<svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            height="18px"
-                            width="18px"
-                            opacity="0"
-                            class="margin-left-4 dsc ${this.tableSort.field === column.field ? "opacity" : ""}"
-                          >
-                            <path
-                              d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
-                            />
-                          </svg>`
-                      }
-                    </span>`}
-                  </th>
-                `
-              )}
-            </tr>
-          </thead>
-          <tbody>
-            ${this.pageData.map(
-              (item) => y`
-                <tr
-                  @click="${() => {
-                    if (this.readOnly) return;
-                    if (this.editMode && this.selectedRow !== item) {
-                      this.unselect();
-                    }
-                    if (this.selectedRow === item && !this.editMode) {
-                      this.selectedRow = null;
-                    } else {
-                      this.selectedRow = item;
-                    }
-                    this.requestUpdate();
-                  }}"
-                  class="table-row ${this.editMode && this.selectedRow === item ? "edit" : ""} ${this.selectedRow === item ? "selected" : ""}"
-                >
-                  ${this.columns.map(
-                    (column) => y`
-                  <td>
-                    ${
-                      this.editMode && this.selectedRow === item
-                        ? this.isDateField(column.field)
-                          ? y`<input
-                                  type="datetime-local"
-                                  .value="${item[column.field]}"
-                                  class="table-cell-input input-styled"
-                                  @input="${(event) =>
-                                    this.onCellEdit({
-                                      field: column.field,
-                                      value: this.formatDate(event.target.value),
-                                    })}"
-                                  @focus="${() => {
-                                    this.editCell = {
-                                      columnName: column.field,
-                                      row: item,
-                                    };
-                                    this.requestUpdate();
-                                  }}"
-                                  @blur="${() => {
-                                    if (this.editCell?.row === item) {
-                                      this.editCell = {
-                                        columnName: column.field,
-                                        row: item,
-                                      };
-                                      this.requestUpdate();
-                                    }
-                                  }}"
-                                  ?disabled=${!!this.readOnly}
-                                />`
-                          : y`<input
-                                  type="text"
-                                  .value="${item[column.field]}"
-                                  class="table-cell-input input-styled"
-                                  @input="${(event) =>
-                                    this.onCellEdit({
-                                      field: column.field,
-                                      value: event.target.value,
-                                    })}"
-                                  @focus="${() => {
-                                    this.editCell = {
-                                      columnName: column.field,
-                                      row: item,
-                                    };
-                                    this.requestUpdate();
-                                  }}"
-                                  @blur="${() => {
-                                    if (this.editCell?.row === item) {
-                                      this.editCell = {
-                                        columnName: column.field,
-                                        row: item,
-                                      };
-                                      this.requestUpdate();
-                                    }
-                                  }}"
-                                  ?disabled=${!!this.readOnly}
-                                />`
-                        : y`<span class="table-cell-value"
-                          >${item[column.field]}</span
-                        >`
-                    }
-                  </td>
-                `
-                  )}
-
-
-                </tr>
-              `
-            )}
-          </tbody>
-        </table>
-      </div>
-      ${this.onLoad(this.collection)}                    
-      ${this.totalPages > 1 ? this.renderPagination() : null}
-      
-    `;
+              <div class="table-wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      ${this.columns.map(
+                        (column) => y`
+                          <th @click="${() => this.onSortClick(column.field)}">
+                            ${y`<span class="flex-item">
+                              ${column.label}
+                              ${
+                                this.tableSort.direction === "asc"
+                                  ? y`<svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    height="18px"
+                                    width="18px"
+                                    opacity="0"
+                                    class="margin-left-4 ${this.tableSort.field === column.field ? "opacity" : ""}"
+                                  >
+                                    <path
+                                      d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
+                                    />
+                                  </svg>`
+                                  : y`<svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    height="18px"
+                                    width="18px"
+                                    opacity="0"
+                                    class="margin-left-4 dsc ${this.tableSort.field === column.field ? "opacity" : ""}"
+                                  >
+                                    <path
+                                      d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
+                                    />
+                                  </svg>`
+                              }
+                            </span>`}
+                          </th>
+                        `
+                      )}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${this.pageData.map(
+                      (item) => y`
+                        <tr
+                          @click="${() => {
+                            if (this.readOnly) return;
+                            if (this.editMode && this.selectedRow !== item) {
+                              this.unselect();
+                            }
+                            if (!this.editMode && this.selectedRow === item) {
+                              this.selectedRow = null;
+                            } else {
+                              this.selectedRow = item;
+                            }
+                            this.requestUpdate();
+                          }}"
+                          class="table-row ${this.editMode && this.selectedRow === item ? "edit" : ""} ${this.selectedRow === item ? "selected" : ""}"
+                        >
+                          ${this.columns.map(
+                            (column) => y`
+                          <td>
+                            ${
+                              this.editMode && this.selectedRow === item
+                                ? this.isDateField(column.field)
+                                  ? y`<input
+                                          type="datetime-local"
+                                          .value="${item[column.field]}"
+                                          class="table-cell-input input-styled"
+                                          @input="${(event) =>
+                                            this.onCellEdit({
+                                              field: column.field,
+                                              value: this.formatDate(event.target.value),
+                                            })}"
+                                          @focus="${() => {
+                                            this.editCell = {
+                                              columnName: column.field,
+                                              row: item,
+                                            };
+                                            this.requestUpdate();
+                                          }}"
+                                          @blur="${() => {
+                                            if (this.editCell?.row === item) {
+                                              this.editCell = {
+                                                columnName: column.field,
+                                                row: item,
+                                              };
+                                              this.requestUpdate();
+                                            }
+                                          }}"
+                                          ?disabled=${!!this.readOnly}
+                                        />`
+                                  : y`<input
+                                          type="text"
+                                          .value="${item[column.field]}"
+                                          class="table-cell-input input-styled"
+                                          @input="${(event) =>
+                                            this.onCellEdit({
+                                              field: column.field,
+                                              value: event.target.value,
+                                            })}"
+                                          @focus="${() => {
+                                            this.editCell = {
+                                              columnName: column.field,
+                                              row: item,
+                                            };
+                                            this.requestUpdate();
+                                          }}"
+                                          @blur="${() => {
+                                            if (this.editCell?.row === item) {
+                                              this.editCell = {
+                                                columnName: column.field,
+                                                row: item,
+                                              };
+                                              this.requestUpdate();
+                                            }
+                                          }}"
+                                          ?disabled=${!!this.readOnly}
+                                        />`
+                                : y`<span class="table-cell-value"
+                                  >${item[column.field]}</span
+                                >`
+                            }
+                          </td>
+                        `
+                          )}
+                        </tr>
+                      `
+                    )}
+                  </tbody>
+                </table>
+              </div>
+              ${this.onLoad(this.collection)}
+              ${this.totalPages > 1 ? this.renderPagination() : null}
+            `;
           },
         },
         {
@@ -897,88 +898,85 @@ let AndysTable = _decorate(
             const end = Math.min(start + this.pageSize - 1, this.filteredData.length);
             const total = this.filteredData.length;
             return y`
-      <div class="pagination">
-        <span class="pagination-total">${start}-${end} of ${total}</span>
-        <button
-          class="pagination-button"
-          @click="${() => this.onPageChange(1)}"
-          ?disabled="${this.currentPage === 1}"
-        >
-          <svg
-            height="24px"
-            width="24px"
-            fill="currentColor"
-            focusable="false"
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M18.41 16.59 13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z"
-            ></path>
-          </svg>
-        </button>
-        <button
-          class="pagination-button"
-          @click="${() => this.onPageChange(this.currentPage - 1)}"
-          ?disabled="${this.currentPage === 1}"
-        >
-          <svg
-            height="24px"
-            width="24px"
-            fill="currentColor"
-            focusable="false"
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M15.41 16.59 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"
-            ></path>
-          </svg>
-        </button>
-        <button
-          class="pagination-button"
-          @click="${() => this.onPageChange(this.currentPage + 1)}"
-          ?disabled="${this.currentPage === this.totalPages}"
-        >
-          <svg
-            height="24px"
-            width="24px"
-            fill="currentColor"
-            focusable="false"
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
-            ></path>
-          </svg>
-        </button>
-        <button
-          class="pagination-button"
-          @click="${() => this.onPageChange(this.totalPages)}"
-          ?disabled="${this.currentPage === this.totalPages}"
-        >
-          <svg
-            height="24px"
-            width="24px"
-            fill="currentColor"
-            focusable="false"
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M5.59 7.41 10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <script>
-        
-  const nacTable = document.querySelector("eiu-table");
-
-  
-</script>
-    `;
+              <div class="pagination">
+                <span class="pagination-total">${start}-${end} of ${total}</span>
+                <button
+                  class="pagination-button"
+                  @click="${() => this.onPageChange(1)}"
+                  ?disabled="${this.currentPage === 1}"
+                >
+                  <svg
+                    height="24px"
+                    width="24px"
+                    fill="currentColor"
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.41 16.59 13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z"
+                    ></path>
+                  </svg>
+                </button>
+                <button
+                  class="pagination-button"
+                  @click="${() => this.onPageChange(this.currentPage - 1)}"
+                  ?disabled="${this.currentPage === 1}"
+                >
+                  <svg
+                    height="24px"
+                    width="24px"
+                    fill="currentColor"
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M15.41 16.59 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"
+                    ></path>
+                  </svg>
+                </button>
+                <button
+                  class="pagination-button"
+                  @click="${() => this.onPageChange(this.currentPage + 1)}"
+                  ?disabled="${this.currentPage === this.totalPages}"
+                >
+                  <svg
+                    height="24px"
+                    width="24px"
+                    fill="currentColor"
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                    ></path>
+                  </svg>
+                </button>
+                <button
+                  class="pagination-button"
+                  @click="${() => this.onPageChange(this.totalPages)}"
+                  ?disabled="${this.currentPage === this.totalPages}"
+                >
+                  <svg
+                    height="24px"
+                    width="24px"
+                    fill="currentColor"
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M5.59 7.41 10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <script>
+                const nacTable = document.querySelector("eiu-table");
+              </script>
+            `;
           },
         },
         {

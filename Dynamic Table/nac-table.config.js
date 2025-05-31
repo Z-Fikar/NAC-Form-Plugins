@@ -10,6 +10,7 @@ const config = {
     readOnly: true,
     required: false,
     description: true,
+    visibility: true,
   },
   version: "1.0",
   properties: {
