@@ -602,10 +602,35 @@ let AndysTable = _decorate(
         },
         {
           kind: "method",
-          key: "isValidDate",
-          value: function isValidDate(dateString) {
-            const date = new Date(dateString);
-            return !isNaN(date.getTime());
+          key: "isDateField",
+          value: function isDateField(fieldName) {
+            return fieldName.toLowerCase().indexOf("datetime") === -1;
+          },
+        },
+        {
+          kind: "method",
+          key: "formatDate",
+          value: function formatDate(dateInput) {
+            let date;
+            if (dateInput instanceof Date) {
+              if (isNaN(dateInput.getTime())) {
+                throw new Error("Invalid Date object");
+              }
+              date = dateInput;
+            } else if (typeof dateInput === "string") {
+              date = new Date(dateInput);
+              if (isNaN(date.getTime())) {
+                throw new Error("Invalid date string");
+              }
+            } else {
+              throw new Error("Input must be a Date object or a date string");
+            }
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, "0"); // zero-based month
+            const day = String(date.getDate()).padStart(2, "0");
+            const hours = String(date.getHours()).padStart(2, "0");
+            const minutes = String(date.getMinutes()).padStart(2, "0");
+            return `${year}-${month}-${day} ${hours}:${minutes}`;
           },
         },
         {
@@ -727,7 +752,6 @@ let AndysTable = _decorate(
         <table>
           <thead>
             <tr>
-              
               ${this.columns.map(
                 (column) => y`
                   <th @click="${() => this.onSortClick(column.field)}">
@@ -769,7 +793,6 @@ let AndysTable = _decorate(
           <tbody>
             ${this.pageData.map(
               (item) => y`
-              
                 <tr
                   @click="${() => {
                     if (this.readOnly) return;
@@ -790,7 +813,7 @@ let AndysTable = _decorate(
                   <td>
                     ${
                       this.editMode && this.selectedRow === item
-                        ? this.isValidDate(item[column.field])
+                        ? this.isDateField(column.field)
                           ? y`<input
                                   type="datetime-local"
                                   .value="${item[column.field]}"
@@ -798,7 +821,7 @@ let AndysTable = _decorate(
                                   @input="${(event) =>
                                     this.onCellEdit({
                                       field: column.field,
-                                      value: event.target.value,
+                                      value: this.formatDate(event.target.value),
                                     })}"
                                   @focus="${() => {
                                     this.editCell = {
