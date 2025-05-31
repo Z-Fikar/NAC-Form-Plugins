@@ -32,6 +32,10 @@ const config = {
       title: "Searchable",
       defaultValue: true,
     },
+    rowNumber: {
+      type: "boolean",
+      title: "Row Number",
+    },
   },
 };
 

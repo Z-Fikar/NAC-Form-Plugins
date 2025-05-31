@@ -444,6 +444,18 @@ let AndysTable = _decorate(
               type: String,
             }),
           ],
+          key: "rowNumber",
+          value() {
+            return false;
+          },
+        },
+        {
+          kind: "field",
+          decorators: [
+            e({
+              type: String,
+            }),
+          ],
           key: "searchable",
           value() {
             return true;
@@ -780,7 +792,7 @@ let AndysTable = _decorate(
                 <table>
                   <thead>
                     <tr>
-                      <th style="text-align: right">No</th>
+                      ${this.getRowNumber ? y`<th style="text-align: right">No</th>` : null}
                       ${this.columns.map(
                         (column) => y`
                           <th @click="${() => this.onSortClick(column.field)}">
@@ -837,7 +849,7 @@ let AndysTable = _decorate(
                           }}"
                           class="table-row ${this.editMode && this.selectedRow === item ? "edit" : ""} ${this.selectedRow === item ? "selected" : ""}"
                         >
-                          <td style="text-align: right">${this.getRowNumber(item)}</td>
+                          ${this.getRowNumber ? y`<td style="text-align: right">${this.getRowNumber(item)}</td>` : null}
                           ${this.columns.map(
                             (column) => y`
                           <td>
