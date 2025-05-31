@@ -37,9 +37,9 @@ const config = {
       title: "Row Number",
     },
     testObject: {
-      type: "array",
       title: "Field Lookups",
-      properties: {
+      type: "array",
+      items: {
         type: "object",
         title: "Item Pair",
         properties: {
