@@ -23,6 +23,10 @@ const config = {
       title: "Updated JSON",
       isValueField: true,
     },
+    pageSize: {
+      type: "integer",
+      title: "Page Size",
+    },
   },
 };
 

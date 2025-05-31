@@ -595,7 +595,7 @@ let AndysTable = _decorate(
           static: true,
           key: "getMetaConfig",
           value: function getMetaConfig() {
-            return import("./nac-table.config.js").then((x) => x.config);
+            return import("./eiu-table.config.js").then((x) => x.config);
           },
         },
         {
