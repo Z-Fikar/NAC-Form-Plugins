@@ -307,7 +307,7 @@ _decorate(
           key: "render",
           value: function render() {
             return y`
-      <div class="button-wrapper ${this.readOnly ? "" : "hidden"}"">
+      <div class="button-wrapper">
         <button
           @click="${() => this.dispatchEvent(new CustomEvent("add-row"))}"
         >
@@ -441,7 +441,7 @@ let AndysTable = _decorate(
               type: String,
             }),
           ],
-          key: "readonly",
+          key: "readOnly",
           value() {
             return false;
           },
@@ -652,7 +652,7 @@ let AndysTable = _decorate(
           value: function render() {
             return y`
       <div class="top-panel">
-        ${this.renderSearch()} ${this.readonly ? null : this.renderToolbar()}
+        ${this.renderSearch()} ${this.readOnly ? null : this.renderToolbar()}
       </div>
       <br />
       ${this.renderTable()}
@@ -764,7 +764,7 @@ let AndysTable = _decorate(
               
                 <tr
                   @click="${() => {
-                    if (this.readonly) return;
+                    if (this.readOnly) return;
                     if (this.editMode && this.selectedRow !== item) {
                       this.unselect();
                     }
@@ -807,7 +807,7 @@ let AndysTable = _decorate(
                                   this.requestUpdate();
                                 }
                               }}"
-                              ?disabled=${!!this.readonly}
+                              ?disabled=${!!this.readOnly}
                             />`
                             : y`<span class="table-cell-value"
                               >${item[column.field]}</span
