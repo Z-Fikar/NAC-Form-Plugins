@@ -30,6 +30,7 @@ const config = {
     searchable: {
       type: "boolean",
       title: "Searchable",
+      defaultValue: true,
     },
   },
 };
