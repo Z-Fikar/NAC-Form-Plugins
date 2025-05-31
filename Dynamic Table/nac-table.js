@@ -604,7 +604,7 @@ let AndysTable = _decorate(
           kind: "method",
           key: "isDateField",
           value: function isDateField(fieldName) {
-            return fieldName.toLowerCase().indexOf("datetime") !== -1;
+            return fieldName.toLowerCase().indexOf("datetime") > -1;
           },
         },
         {
