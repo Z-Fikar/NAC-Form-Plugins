@@ -748,9 +748,11 @@ let AndysTable = _decorate(
           kind: "method",
           key: "renderTable",
           value: function renderTable() {
-            const start = (this.currentPage - 1) * this.pageSize;
-            const end = start + this.pageSize;
+            let start = (this.currentPage - 1) * this.pageSize;
+            let end = start * 1 + this.pageSize * 1;
             this.pageData = this.sortedData.slice(start, end);
+            console.log("PAGE DATA", start, end, this.pageData);
+
             return y`
               <div class="table-wrapper">
                 <table>

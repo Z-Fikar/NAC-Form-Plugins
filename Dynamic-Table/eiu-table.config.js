@@ -2,7 +2,7 @@ const config = {
   controlName: "Editable Table",
   description: "Editable Table for NAC",
   groupName: "Elistec Form Controls",
-  fallbackDisableSubmit: false,
+  fallbackDisableSubmit: true,
   iconUrl: "repeating-section",
   searchTerms: ["list", "table", "repeat", "section", "repeating section", "elistec", "eiu"],
   pluginAuthor: "Nintex, Zulfikar",
