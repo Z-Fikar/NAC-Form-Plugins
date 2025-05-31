@@ -625,6 +625,13 @@ let AndysTable = _decorate(
         },
         {
           kind: "method",
+          key: "getRowNumber",
+          value: function getRowNumber(item) {
+            return this.data.indexOf(item) + 1;
+          },
+        },
+        {
+          kind: "method",
           key: "isDateField",
           value: function isDateField(fieldName) {
             return fieldName.toLowerCase().indexOf("datetime") > -1;
@@ -773,6 +780,7 @@ let AndysTable = _decorate(
                 <table>
                   <thead>
                     <tr>
+                      <th>No</th>
                       ${this.columns.map(
                         (column) => y`
                           <th @click="${() => this.onSortClick(column.field)}">
@@ -829,6 +837,7 @@ let AndysTable = _decorate(
                           }}"
                           class="table-row ${this.editMode && this.selectedRow === item ? "edit" : ""} ${this.selectedRow === item ? "selected" : ""}"
                         >
+                          <td>${this.getRowNumber(item)}</td>
                           ${this.columns.map(
                             (column) => y`
                           <td>
