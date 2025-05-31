@@ -602,6 +602,14 @@ let AndysTable = _decorate(
         },
         {
           kind: "method",
+          key: "isValidDate",
+          value: function isValidDate() {
+            const date = new Date(dateString);
+            return !isNaN(date.getTime());
+          },
+        },
+        {
+          kind: "method",
           key: "onSortClick",
           value: function onSortClick(field) {
             const { direction } = this.tableSort;
@@ -782,7 +790,7 @@ let AndysTable = _decorate(
                   <td>
                     ${
                       this.editMode && this.selectedRow === item
-                        ? isValidDate(item[column.field])
+                        ? this.isValidDate(item[column.field])
                           ? y`<input
                                   type="datetime-local"
                                   .value="${item[column.field]}"
