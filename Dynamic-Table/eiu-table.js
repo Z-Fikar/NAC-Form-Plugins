@@ -446,7 +446,7 @@ let AndysTable = _decorate(
           ],
           key: "searchable",
           value() {
-            return false;
+            return true;
           },
         },
         {

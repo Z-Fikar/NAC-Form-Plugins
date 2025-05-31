@@ -11,7 +11,6 @@ const config = {
     required: false,
     description: true,
     visibility: true,
-    searchable: true,
   },
   version: "1.0",
   properties: {
@@ -27,6 +26,10 @@ const config = {
     pageSize: {
       type: "integer",
       title: "Page Size",
+    },
+    searchable: {
+      type: "boolean",
+      title: "Searchable",
     },
   },
 };
