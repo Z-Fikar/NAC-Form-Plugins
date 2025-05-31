@@ -267,8 +267,11 @@ _decorate(
         justify-content: space-between;
         align-items: center;
       }
-      .hidden{
+      .d-none{
           display: none;
+      }
+      .v-hidden{
+          visibility: hidden;
       }
 
       button {
@@ -432,6 +435,18 @@ let AndysTable = _decorate(
           key: "collection",
           value() {
             return "";
+          },
+        },
+        {
+          kind: "field",
+          decorators: [
+            e({
+              type: String,
+            }),
+          ],
+          key: "searchable",
+          value() {
+            return false;
           },
         },
         {
@@ -702,7 +717,7 @@ let AndysTable = _decorate(
           kind: "method",
           key: "renderSearch",
           value: function renderSearch() {
-            return y`<div class="search-wrapper">
+            return y`<div class="search-wrapper ${this.searchable ? "" : "v-hidden"}">
               <svg
                 class="search-icon"
                 height="24px"

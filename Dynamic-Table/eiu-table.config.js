@@ -11,6 +11,7 @@ const config = {
     required: false,
     description: true,
     visibility: true,
+    searchable: true,
   },
   version: "1.0",
   properties: {
