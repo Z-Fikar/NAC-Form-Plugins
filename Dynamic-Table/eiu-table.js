@@ -705,7 +705,7 @@ let AndysTable = _decorate(
           key: "render",
           value: function render() {
             return y`
-              <div class="top-panel">
+              <div class="top-panel ${!this.searchable && this.readOnly ? "d-none" : ""}">
                 ${this.renderSearch()} ${this.readOnly ? null : this.renderToolbar()}
               </div>
               <br />
