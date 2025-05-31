@@ -792,7 +792,7 @@ let AndysTable = _decorate(
                 <table>
                   <thead>
                     <tr>
-                      ${this.getRowNumber ? y`<th style="text-align: right">No</th>` : null}
+                      ${this.rowNumber ? y`<th style="text-align: right">No</th>` : null}
                       ${this.columns.map(
                         (column) => y`
                           <th @click="${() => this.onSortClick(column.field)}">
@@ -849,7 +849,7 @@ let AndysTable = _decorate(
                           }}"
                           class="table-row ${this.editMode && this.selectedRow === item ? "edit" : ""} ${this.selectedRow === item ? "selected" : ""}"
                         >
-                          ${this.getRowNumber ? y`<td style="text-align: right">${this.getRowNumber(item)}</td>` : null}
+                          ${this.rowNumber ? y`<td style="text-align: right">${this.getRowNumber(item)}</td>` : null}
                           ${this.columns.map(
                             (column) => y`
                           <td>
