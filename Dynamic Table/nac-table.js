@@ -211,7 +211,7 @@ const styles = [baseStyle, NacTableStyles];
  * SPDX-License-Identifier: BSD-3-Clause
  */console.warn("The main 'lit-element' module entrypoint is deprecated. Please update your imports to use the 'lit' package: 'lit' and 'lit/decorators.ts' or import from 'lit-element/lit-element.ts'. See https://lit.dev/msg/deprecated-import-path for more information.");
 
-_decorate([e$1("lit-toolbar")], function (_initialize, _LitElement) {
+_decorate([e$1("eiu-toolbar")], function (_initialize, _LitElement) {
   class LitToolbar extends _LitElement {
     constructor(...args) {
       super(...args);
@@ -651,7 +651,7 @@ let AndysTable = _decorate([e$1('eiu-table')], function (_initialize, _LitElemen
       key: "renderToolbar",
       value: function renderToolbar() {
         return y`
-      <lit-toolbar
+      <eiu-toolbar
         @add-row="${this.onAddRow}"
         @edit-row="${this.onEditRow}"
         @delete-row="${this.onDeleteRow}"
@@ -660,7 +660,7 @@ let AndysTable = _decorate([e$1('eiu-table')], function (_initialize, _LitElemen
         .editMode="${this.editMode}"
         .hasSelectedRow="${!!this.selectedRow}"
         
-      ></lit-toolbar>
+      ></eiu-toolbar>
     `;
       }
     }, {
