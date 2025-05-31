@@ -36,12 +36,17 @@ const config = {
       type: "boolean",
       title: "Row Number",
     },
-    testObject: {
-      title: "Field Lookups",
-      type: "array",
-      items: {
-        type: "integer",
-      },
+    lookupLabels: {
+      type: "string",
+      title: "Lookup Labels",
+    },
+    lookupValues: {
+      type: "string",
+      title: "Lookup Values",
+    },
+    lookupMapping: {
+      type: "string",
+      title: "Lookup Mapping",
     },
   },
 };
