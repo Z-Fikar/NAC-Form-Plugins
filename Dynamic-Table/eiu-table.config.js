@@ -36,6 +36,24 @@ const config = {
       type: "boolean",
       title: "Row Number",
     },
+    testObject: {
+      type: "array",
+      title: "Field Lookups",
+      properties: {
+        type: "object",
+        title: "Item Pair",
+        properties: {
+          key: {
+            type: "string",
+            title: "Key",
+          },
+          value: {
+            type: "string",
+            title: "Value",
+          },
+        },
+      },
+    },
   },
 };
 
