@@ -837,7 +837,7 @@ let AndysTable = _decorate(
                           }}"
                           class="table-row ${this.editMode && this.selectedRow === item ? "edit" : ""} ${this.selectedRow === item ? "selected" : ""}"
                         >
-                          <td>${this.getRowNumber(item)}</td>
+                          <td style="text-align: right">${this.getRowNumber(item)}</td>
                           ${this.columns.map(
                             (column) => y`
                           <td>
