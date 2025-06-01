@@ -1226,6 +1226,17 @@ let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElemen
       },
       {
         kind: "method",
+        key: "isOptionField",
+        value: function isOptionField(keyToCheck) {
+          let dataObj = this.options;
+          if (!dataObj || typeof dataObj !== "object" || typeof keyToCheck !== "string") {
+            return false;
+          }
+          return Object.prototype.hasOwnProperty.call(dataObj, keyToCheck);
+        },
+      },
+      {
+        kind: "method",
         key: "generateOptions",
         value: function generateOptions(verbose = false) {
           try {
