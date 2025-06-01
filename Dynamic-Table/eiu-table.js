@@ -654,7 +654,7 @@ let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElemen
           if (changedProps.has("collection")) {
             try {
               this.data = JSON.parse(this.collection);
-              this.options = this.generateOptions(this.lookupLabels, this.lookupValues, this.lookupMapping, true);
+              this.options = this.generateOptions(true);
               this.updatePageData();
               console.log(this.options);
             } catch (e) {
@@ -1227,8 +1227,18 @@ let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElemen
       {
         kind: "method",
         key: "generateOptions",
-        value: function generateOptions(lookupLabels, lookupValues, lookupMapping, verbose = false) {
+        value: function generateOptions(verbose = false) {
           try {
+            // Check if all parameters are null or empty string after parsing
+            const allNullOrEmpty = [this.lookupLabels, this.lookupValues, this.lookupMapping].every((p) => p === null || (typeof p === "string" && p.trim() === ""));
+            if (allNullOrEmpty) {
+              return null;
+            }
+
+            let lookupLabels = JSON.parse(this.lookupLabels);
+            let lookupValues = JSON.parse(this.lookupValues);
+            let lookupMapping = JSON.parse(this.lookupMapping);
+
             if (!Array.isArray(lookupLabels) || !Array.isArray(lookupValues) || !Array.isArray(lookupMapping)) {
               throw new Error("All inputs must be arrays.");
             }
