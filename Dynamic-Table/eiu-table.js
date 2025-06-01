@@ -742,12 +742,14 @@ let AndysTable = _decorate(
         key: "renderDisplayField",
         value: function renderDisplayField(item, column) {
           console.log("renderDisplayField", item, column);
-          let displayValue = item[column.field];
+          let displayValue;
           if (this.isDateField(column.field)) {
             displayValue = this.formatDate(displayValue);
           } else if (this.isSelectField(column.field)) {
             let options = this.options[column.field];
             displayValue = options.find((item) => item.value === displayValue) || displayValue;
+          } else {
+            displayValue = item[column.field];
           }
           console.log("renderDisplayField", displayValue);
 
@@ -931,18 +933,14 @@ let AndysTable = _decorate(
                         let cellContent;
 
                         if (this.editMode && this.selectedRow === item) {
-                          this.renderEditField(item, column);
+                          cellContent = this.renderEditField(item, column);
                         } else {
-                          this.renderDisplayField(item, column);
+                          cellContent = this.renderDisplayField(item, column);
                         }
+                        console.log("cellContent", cellContent);
 
-                        return y`
-                          <td>
-                            ${cellContent}
-                          </td>
-                        `;
+                        return y`<td>${cellContent}</td>`;
                       })}
-
                     </tr>
                   `
                 )}
