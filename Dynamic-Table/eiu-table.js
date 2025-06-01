@@ -61,7 +61,6 @@ const config = {
     },
   },
 };
-
 const baseStyle = i`
   :host {
     height: 100%;
@@ -277,7 +276,8 @@ const styles = [baseStyle, NacTableStyles];
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */ console.warn("The main 'lit-element' module entrypoint is deprecated. Please update your imports to use the 'lit' package: 'lit' and 'lit/decorators.ts' or import from 'lit-element/lit-element.ts'. See https://lit.dev/msg/deprecated-import-path for more information.");
+ */
+console.warn("The main 'lit-element' module entrypoint is deprecated. Please update your imports to use the 'lit' package: 'lit' and 'lit/decorators.ts' or import from 'lit-element/lit-element.ts'. See https://lit.dev/msg/deprecated-import-path for more information.");
 
 _decorate(
   [e$1("eiu-toolbar")],
@@ -468,6 +468,7 @@ _decorate(
 );
 
 let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElement) {
+  console.log("CREATE CLASS");
   class AndysTable extends _LitElement {
     constructor(...args) {
       super(...args);
@@ -475,6 +476,7 @@ let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElemen
     }
   }
 
+  console.log("CREATE HANDLERS");
   let fieldHandlers = [
     {
       kind: "field",
@@ -730,7 +732,7 @@ let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElemen
       static: true,
       key: "getMetaConfig",
       value: function getMetaConfig() {
-        return this.config;
+        return config;
       },
     },
   ];
@@ -1417,6 +1419,7 @@ let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElemen
     },
   ];
   let allHandlers = [...fieldHandlers, ...getHandlers, ...mainHandlers, ...renderHandlers, ...tableHandlers, ...functionHandlers];
+
   console.log("F", AndysTable);
   console.log("d", allHandlers);
 
