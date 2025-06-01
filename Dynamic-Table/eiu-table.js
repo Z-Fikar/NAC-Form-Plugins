@@ -1275,6 +1275,7 @@ let AndysTable = _decorate(
         kind: "method",
         key: "formatDate",
         value: function formatDate(dateInput) {
+          console.log("formatDate", "INPUT", dateInput);
           let date;
           if (dateInput instanceof Date) {
             if (isNaN(dateInput.getTime())) {
