@@ -749,9 +749,7 @@ let AndysTable = _decorate(
             displayValue = options.find((item) => item.value === displayValue) || displayValue;
           }
 
-          let contentCell = y`<span class="table-cell-value">${item[column.field]}</span>`;
-
-          return contentCell;
+          return y`<span class="table-cell-value">${displayValue}</span>`;
         },
       },
       {
@@ -768,7 +766,7 @@ let AndysTable = _decorate(
             cellContent = this.renderTextField(item, column);
           }
 
-          return contentCell;
+          return cellContent;
         },
       },
       {
