@@ -412,945 +412,951 @@ let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElemen
       _initialize(this);
     }
   }
-  return {
-    F: AndysTable,
-    d: [
-      // field handlers
-      {
-        kind: "field",
-        static: true,
-        key: "styles",
-        value() {
-          return styles;
-        },
+
+  let fieldHandlers = [
+    {
+      kind: "field",
+      static: true,
+      key: "styles",
+      value() {
+        return styles;
       },
-      {
-        kind: "field",
-        decorators: [
-          e({
-            type: String,
-          }),
-        ],
-        key: "collection",
-        value() {
-          return "";
-        },
+    },
+    {
+      kind: "field",
+      decorators: [
+        e({
+          type: String,
+        }),
+      ],
+      key: "collection",
+      value() {
+        return "";
       },
-      {
-        kind: "field",
-        decorators: [
-          e({
-            type: String,
-          }),
-        ],
-        key: "lookupLabels",
-        value() {
-          return "";
-        },
+    },
+    {
+      kind: "field",
+      decorators: [
+        e({
+          type: String,
+        }),
+      ],
+      key: "lookupLabels",
+      value() {
+        return "";
       },
-      {
-        kind: "field",
-        decorators: [
-          e({
-            type: String,
-          }),
-        ],
-        key: "lookupValues",
-        value() {
-          return "";
-        },
+    },
+    {
+      kind: "field",
+      decorators: [
+        e({
+          type: String,
+        }),
+      ],
+      key: "lookupValues",
+      value() {
+        return "";
       },
-      {
-        kind: "field",
-        decorators: [
-          e({
-            type: String,
-          }),
-        ],
-        key: "lookupMapping",
-        value() {
-          return "";
-        },
+    },
+    {
+      kind: "field",
+      decorators: [
+        e({
+          type: String,
+        }),
+      ],
+      key: "lookupMapping",
+      value() {
+        return "";
       },
-      {
-        kind: "field",
-        decorators: [
-          e({
-            type: String,
-          }),
-        ],
-        key: "rowNumber",
-        value() {
-          return false;
-        },
+    },
+    {
+      kind: "field",
+      decorators: [
+        e({
+          type: String,
+        }),
+      ],
+      key: "rowNumber",
+      value() {
+        return false;
       },
-      {
-        kind: "field",
-        decorators: [
-          e({
-            type: String,
-          }),
-        ],
-        key: "searchable",
-        value() {
-          return true;
-        },
+    },
+    {
+      kind: "field",
+      decorators: [
+        e({
+          type: String,
+        }),
+      ],
+      key: "searchable",
+      value() {
+        return true;
       },
-      {
-        kind: "field",
-        decorators: [
-          e({
-            type: String,
-          }),
-        ],
-        key: "readOnly",
-        value() {
-          return false;
-        },
+    },
+    {
+      kind: "field",
+      decorators: [
+        e({
+          type: String,
+        }),
+      ],
+      key: "readOnly",
+      value() {
+        return false;
       },
-      {
-        kind: "field",
-        decorators: [
-          e({
-            type: String,
-          }),
-        ],
-        key: "visibility",
-        value() {
-          return true;
-        },
+    },
+    {
+      kind: "field",
+      decorators: [
+        e({
+          type: String,
+        }),
+      ],
+      key: "visibility",
+      value() {
+        return true;
       },
-      {
-        kind: "field",
-        key: "data",
-        value() {
-          return [];
-        },
+    },
+    {
+      kind: "field",
+      key: "data",
+      value() {
+        return [];
       },
-      {
-        kind: "field",
-        key: "options",
-        value() {
-          return null;
-        },
+    },
+    {
+      kind: "field",
+      key: "options",
+      value() {
+        return null;
       },
-      {
-        kind: "field",
-        key: "editCell",
-        value() {
-          return null;
-        },
+    },
+    {
+      kind: "field",
+      key: "editCell",
+      value() {
+        return null;
       },
-      {
-        kind: "field",
-        key: "pageData",
-        value() {
-          return [];
-        },
+    },
+    {
+      kind: "field",
+      key: "pageData",
+      value() {
+        return [];
       },
-      {
-        kind: "field",
-        key: "totalPages",
-        value() {
-          return 1;
-        },
+    },
+    {
+      kind: "field",
+      key: "totalPages",
+      value() {
+        return 1;
       },
-      {
-        kind: "field",
-        key: "currentPage",
-        value() {
-          return 1;
-        },
+    },
+    {
+      kind: "field",
+      key: "currentPage",
+      value() {
+        return 1;
       },
-      {
-        kind: "field",
-        key: "pageSize",
-        value() {
-          return 10;
-        },
+    },
+    {
+      kind: "field",
+      key: "pageSize",
+      value() {
+        return 10;
       },
-      {
-        kind: "field",
-        key: "searchText",
-        value() {
-          return "";
-        },
+    },
+    {
+      kind: "field",
+      key: "searchText",
+      value() {
+        return "";
       },
-      {
-        kind: "field",
-        key: "tableSort",
-        value() {
+    },
+    {
+      kind: "field",
+      key: "tableSort",
+      value() {
+        return {
+          field: "",
+          direction: "asc",
+        };
+      },
+    },
+    {
+      kind: "field",
+      key: "selectedRow",
+      value() {
+        return null;
+      },
+    },
+    {
+      kind: "field",
+      key: "editMode",
+      value() {
+        return false;
+      },
+    },
+    {
+      kind: "field",
+      key: "tempEditRowData",
+      value() {
+        return null;
+      },
+    },
+  ];
+  let getHandlers = [
+    {
+      kind: "get",
+      key: "filteredData",
+      value: function filteredData() {
+        return this.data.filter((item) => {
+          return Object.values(item)
+            .map((val) => String(val))
+            .some((val) => val.toLowerCase().includes(this.searchText.toLowerCase()));
+        });
+      },
+    },
+    {
+      kind: "get",
+      key: "sortedData",
+      value: function sortedData() {
+        const { field, direction } = this.tableSort;
+        return this.filteredData.sort((a, b) => {
+          const aVal = a[field];
+          const bVal = b[field];
+          if (aVal < bVal) return direction === "asc" ? -1 : 1;
+          if (aVal > bVal) return direction === "asc" ? 1 : -1;
+          return 0;
+        });
+      },
+    },
+    {
+      kind: "get",
+      key: "columns",
+      value: function columns() {
+        const sampleRow = this.data[0] || {};
+        return Object.keys(sampleRow).map((field) => {
           return {
-            field: "",
-            direction: "asc",
+            label: field,
+            field: field,
           };
-        },
+        });
       },
-      {
-        kind: "field",
-        key: "selectedRow",
-        value() {
-          return null;
-        },
-      },
-      {
-        kind: "field",
-        key: "editMode",
-        value() {
-          return false;
-        },
-      },
-      {
-        kind: "field",
-        key: "tempEditRowData",
-        value() {
-          return null;
-        },
-      },
-      // get handlers
-      {
-        kind: "get",
-        key: "filteredData",
-        value: function filteredData() {
-          return this.data.filter((item) => {
-            return Object.values(item)
-              .map((val) => String(val))
-              .some((val) => val.toLowerCase().includes(this.searchText.toLowerCase()));
-          });
-        },
-      },
-      {
-        kind: "get",
-        key: "sortedData",
-        value: function sortedData() {
-          const { field, direction } = this.tableSort;
-          return this.filteredData.sort((a, b) => {
-            const aVal = a[field];
-            const bVal = b[field];
-            if (aVal < bVal) return direction === "asc" ? -1 : 1;
-            if (aVal > bVal) return direction === "asc" ? 1 : -1;
-            return 0;
-          });
-        },
-      },
-      {
-        kind: "get",
-        key: "columns",
-        value: function columns() {
-          const sampleRow = this.data[0] || {};
-          return Object.keys(sampleRow).map((field) => {
-            return {
-              label: field,
-              field: field,
-            };
-          });
-        },
-      },
-      // method handlers - main
-      {
-        kind: "method",
-        key: "updated",
-        value: function updated(changedProps) {
-          if (changedProps.has("collection")) {
-            try {
-              this.data = JSON.parse(this.collection);
-              this.options = this.generateOptions(true);
-              this.updatePageData();
-              console.log(this.options);
-            } catch (e) {
-              console.error("Error parsing table data: ", e);
-            }
+    },
+  ];
+  let mainHandlers = [
+    {
+      kind: "method",
+      key: "updated",
+      value: function updated(changedProps) {
+        if (changedProps.has("collection")) {
+          try {
+            this.data = JSON.parse(this.collection);
+            this.options = this.generateOptions(true);
+            this.updatePageData();
+            console.log(this.options);
+          } catch (e) {
+            console.error("Error parsing table data: ", e);
           }
-        },
+        }
       },
-      {
-        kind: "method",
-        static: true,
-        key: "getMetaConfig",
-        value: function getMetaConfig() {
-          return import("./eiu-table.config.js").then((x) => x.config);
-        },
+    },
+    {
+      kind: "method",
+      static: true,
+      key: "getMetaConfig",
+      value: function getMetaConfig() {
+        return import("./eiu-table.config.js").then((x) => x.config);
       },
-      // method handlers - render
-      {
-        kind: "method",
-        key: "render",
-        value: function render() {
-          return y`
-              <div class="top-panel ${!this.searchable && this.readOnly ? "d-none" : ""}">
-                ${this.renderSearch()} ${this.readOnly ? null : this.renderToolbar()}
-              </div>
-              <br />
-              ${this.renderTable()}
-            `;
-        },
-      },
-      {
-        kind: "method",
-        key: "renderSearch",
-        value: function renderSearch() {
-          return y`<div class="search-wrapper ${this.searchable ? "" : "v-hidden"}">
-              <svg
-                class="search-icon"
-                height="24px"
-                width="24px"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M9.5,4C13.09,4 16,6.91 16,10.5C16,12.12 15.41,13.6 14.43,14.73L20.08,20.38L19.37,21.09L13.72,15.44C12.59,16.41 11.11,17 9.5,17C5.91,17 3,14.09 3,10.5C3,6.91 5.91,4 9.5,4M9.5,5C6.46,5 4,7.46 4,10.5C4,13.54 6.46,16 9.5,16C12.54,16 15,13.54 15,10.5C15,7.46 12.54,5 9.5,5Z"
-                />
-              </svg>
-              <input
-                class="search-input input-styled"
-                id="search-input"
-                placeholder="Search..."
-
-                @input=${(event) => {
-                  this.searchText = event.target.value;
-                  this.updatePageData();
-                }}
-              />
-            </div> `;
-        },
-      },
-      {
-        kind: "method",
-        key: "renderToolbar",
-        value: function renderToolbar() {
-          return y`
-              <eiu-toolbar
-                @add-row="${this.onAddRow}"
-                @edit-row="${this.onEditRow}"
-                @delete-row="${this.onDeleteRow}"
-                @save-row="${this.onSaveRow}"
-                @discard-row="${this.onDiscardRow}"
-                .editMode="${this.editMode}"
-                .hasSelectedRow="${!!this.selectedRow}"
-              ></eiu-toolbar>
-            `;
-        },
-      },
-      {
-        kind: "method",
-        key: "renderDisplayField",
-        value: function renderDisplayField(item, column) {
-          let displayValue = item[column.field];
-          if (this.isDateField(column.field)) {
-            displayValue = formatDate(displayValue);
-          } else if (this.isSelectField(column.field)) {
-            let options = this.options[column.field];
-            displayValue = options.find((item) => item.value === displayValue) || displayValue;
-          }
-
-          let contentCell = y`<span class="table-cell-value">${item[column.field]}</span>`;
-
-          return contentCell;
-        },
-      },
-      {
-        kind: "method",
-        key: "renderEditField",
-        value: function renderEditField(item, column) {
-          let cellContent;
-
-          if (this.isDateField(column.field)) {
-            cellContent = this.renderDateTimeField(item, column);
-          } else if (this.isSelectField(column.field)) {
-            cellContent = this.renderSelectField(item, column);
-          } else {
-            cellContent = this.renderTextField(item, column);
-          }
-
-          return contentCell;
-        },
-      },
-      {
-        kind: "method",
-        key: "renderTextField",
-        value: function renderTextField(item, column) {
-          return y`
-            <input type="text" class="table-cell-input input-styled"
-              .value="${item[column.field]}"
-              ?disabled=${!!this.readOnly}
-              @input="${(event) => {
-                this.onCellEdit({ field: column.field, value: event.target.value });
-              }}"
-              @focus="${() => {
-                this.editCell = { columnName: column.field, row: item };
-                this.requestUpdate();
-              }}"
-              @blur="${() => {
-                if (this.editCell?.row === item) {
-                  this.editCell = { columnName: column.field, row: item };
-                  this.requestUpdate();
-                }
-              }}"
-            />
+    },
+  ];
+  let renderHandlers = [
+    {
+      kind: "method",
+      key: "render",
+      value: function render() {
+        return y`
+            <div class="top-panel ${!this.searchable && this.readOnly ? "d-none" : ""}">
+              ${this.renderSearch()} ${this.readOnly ? null : this.renderToolbar()}
+            </div>
+            <br />
+            ${this.renderTable()}
           `;
-        },
       },
-      {
-        kind: "method",
-        key: "renderDateTimeField",
-        value: function renderDateTimeField(item, column) {
-          return y`
-            <input type="datetime-local" class="table-cell-input input-styled"
-              .value="${item[column.field]}"
-              ?disabled=${!!this.readOnly}
-              @input="${(event) => {
-                this.onCellEdit({ field: column.field, value: this.formatDate(event.target.value) });
-              }}"
-              @focus="${() => {
-                this.editCell = { columnName: column.field, row: item };
-                this.requestUpdate();
-              }}"
-              @blur="${() => {
-                if (this.editCell?.row === item) {
-                  this.editCell = { columnName: column.field, row: item };
-                  this.requestUpdate();
-                }
-              }}"
-            />`;
-        },
-      },
-      {
-        kind: "method",
-        key: "renderSelectField",
-        value: function renderSelectField(item, column) {
-          const options = this.options[column.field] || [];
-
-          return y`
-            <select class="table-cell-input input-styled"
-              ?disabled=${!!this.readOnly}
-              @change="${(event) => {
-                this.onCellEdit({ field: column.field, value: event.target.value });
-              }}"
-              @focus="${() => {
-                this.editCell = { columnName: column.field, row: item };
-                this.requestUpdate();
-              }}"
-              @blur="${() => {
-                if (this.editCell?.row === item) {
-                  this.editCell = { columnName: column.field, row: item };
-                  this.requestUpdate();
-                }
-              }}"
+    },
+    {
+      kind: "method",
+      key: "renderSearch",
+      value: function renderSearch() {
+        return y`<div class="search-wrapper ${this.searchable ? "" : "v-hidden"}">
+            <svg
+              class="search-icon"
+              height="24px"
+              width="24px"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
             >
-              ${options.map(
-                (option) => y`
-                  <option value="${option.value}" ?selected="${option.value === item[column.field]}">
-                    ${option.label}
-                  </option>
-                `
-              )}
-            </select>`;
-        },
+              <path
+                d="M9.5,4C13.09,4 16,6.91 16,10.5C16,12.12 15.41,13.6 14.43,14.73L20.08,20.38L19.37,21.09L13.72,15.44C12.59,16.41 11.11,17 9.5,17C5.91,17 3,14.09 3,10.5C3,6.91 5.91,4 9.5,4M9.5,5C6.46,5 4,7.46 4,10.5C4,13.54 6.46,16 9.5,16C12.54,16 15,13.54 15,10.5C15,7.46 12.54,5 9.5,5Z"
+              />
+            </svg>
+            <input
+              class="search-input input-styled"
+              id="search-input"
+              placeholder="Search..."
+
+              @input=${(event) => {
+                this.searchText = event.target.value;
+                this.updatePageData();
+              }}
+            />
+          </div> `;
       },
-      {
-        kind: "method",
-        key: "renderTable",
-        value: function renderTable() {
-          let start = (this.currentPage - 1) * this.pageSize;
-          let end = start * 1 + this.pageSize * 1;
-          this.pageData = this.sortedData.slice(start, end);
-          console.log("PAGE DATA", start, end, this.pageData);
+    },
+    {
+      kind: "method",
+      key: "renderToolbar",
+      value: function renderToolbar() {
+        return y`
+            <eiu-toolbar
+              @add-row="${this.onAddRow}"
+              @edit-row="${this.onEditRow}"
+              @delete-row="${this.onDeleteRow}"
+              @save-row="${this.onSaveRow}"
+              @discard-row="${this.onDiscardRow}"
+              .editMode="${this.editMode}"
+              .hasSelectedRow="${!!this.selectedRow}"
+            ></eiu-toolbar>
+          `;
+      },
+    },
+    {
+      kind: "method",
+      key: "renderDisplayField",
+      value: function renderDisplayField(item, column) {
+        let displayValue = item[column.field];
+        if (this.isDateField(column.field)) {
+          displayValue = formatDate(displayValue);
+        } else if (this.isSelectField(column.field)) {
+          let options = this.options[column.field];
+          displayValue = options.find((item) => item.value === displayValue) || displayValue;
+        }
 
-          return y`
-            <div class="table-wrapper">
-              <table>
-                <thead>
-                  <tr>
-                    ${this.rowNumber ? y`<th style="text-align: right">No</th>` : null}
-                    ${this.columns.map(
-                      (column) => y`
-                        <th @click="${() => this.onSortClick(column.field)}">
-                          ${y`<span class="flex-item">
-                            ${column.label}
-                            ${
-                              this.tableSort.direction === "asc"
-                                ? y`<svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 24 24"
-                                  height="18px"
-                                  width="18px"
-                                  opacity="0"
-                                  class="margin-left-4 ${this.tableSort.field === column.field ? "opacity" : ""}"
-                                >
-                                  <path
-                                    d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
-                                  />
-                                </svg>`
-                                : y`<svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 24 24"
-                                  height="18px"
-                                  width="18px"
-                                  opacity="0"
-                                  class="margin-left-4 dsc ${this.tableSort.field === column.field ? "opacity" : ""}"
-                                >
-                                  <path
-                                    d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
-                                  />
-                                </svg>`
-                            }
-                          </span>`}
-                        </th>
-                      `
-                    )}
-                  </tr>
-                </thead>
-                <tbody>
-                  ${this.pageData.map(
-                    (item) => y`
-                      <tr
-                        @click="${() => {
-                          if (this.readOnly) return;
-                          if (this.editMode && this.selectedRow !== item) {
-                            this.unselect();
+        let contentCell = y`<span class="table-cell-value">${item[column.field]}</span>`;
+
+        return contentCell;
+      },
+    },
+    {
+      kind: "method",
+      key: "renderEditField",
+      value: function renderEditField(item, column) {
+        let cellContent;
+
+        if (this.isDateField(column.field)) {
+          cellContent = this.renderDateTimeField(item, column);
+        } else if (this.isSelectField(column.field)) {
+          cellContent = this.renderSelectField(item, column);
+        } else {
+          cellContent = this.renderTextField(item, column);
+        }
+
+        return contentCell;
+      },
+    },
+    {
+      kind: "method",
+      key: "renderTextField",
+      value: function renderTextField(item, column) {
+        return y`
+          <input type="text" class="table-cell-input input-styled"
+            .value="${item[column.field]}"
+            ?disabled=${!!this.readOnly}
+            @input="${(event) => {
+              this.onCellEdit({ field: column.field, value: event.target.value });
+            }}"
+            @focus="${() => {
+              this.editCell = { columnName: column.field, row: item };
+              this.requestUpdate();
+            }}"
+            @blur="${() => {
+              if (this.editCell?.row === item) {
+                this.editCell = { columnName: column.field, row: item };
+                this.requestUpdate();
+              }
+            }}"
+          />
+        `;
+      },
+    },
+    {
+      kind: "method",
+      key: "renderDateTimeField",
+      value: function renderDateTimeField(item, column) {
+        return y`
+          <input type="datetime-local" class="table-cell-input input-styled"
+            .value="${item[column.field]}"
+            ?disabled=${!!this.readOnly}
+            @input="${(event) => {
+              this.onCellEdit({ field: column.field, value: this.formatDate(event.target.value) });
+            }}"
+            @focus="${() => {
+              this.editCell = { columnName: column.field, row: item };
+              this.requestUpdate();
+            }}"
+            @blur="${() => {
+              if (this.editCell?.row === item) {
+                this.editCell = { columnName: column.field, row: item };
+                this.requestUpdate();
+              }
+            }}"
+          />`;
+      },
+    },
+    {
+      kind: "method",
+      key: "renderSelectField",
+      value: function renderSelectField(item, column) {
+        const options = this.options[column.field] || [];
+
+        return y`
+          <select class="table-cell-input input-styled"
+            ?disabled=${!!this.readOnly}
+            @change="${(event) => {
+              this.onCellEdit({ field: column.field, value: event.target.value });
+            }}"
+            @focus="${() => {
+              this.editCell = { columnName: column.field, row: item };
+              this.requestUpdate();
+            }}"
+            @blur="${() => {
+              if (this.editCell?.row === item) {
+                this.editCell = { columnName: column.field, row: item };
+                this.requestUpdate();
+              }
+            }}"
+          >
+            ${options.map(
+              (option) => y`
+                <option value="${option.value}" ?selected="${option.value === item[column.field]}">
+                  ${option.label}
+                </option>
+              `
+            )}
+          </select>`;
+      },
+    },
+    {
+      kind: "method",
+      key: "renderTable",
+      value: function renderTable() {
+        let start = (this.currentPage - 1) * this.pageSize;
+        let end = start * 1 + this.pageSize * 1;
+        this.pageData = this.sortedData.slice(start, end);
+        console.log("PAGE DATA", start, end, this.pageData);
+
+        return y`
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  ${this.rowNumber ? y`<th style="text-align: right">No</th>` : null}
+                  ${this.columns.map(
+                    (column) => y`
+                      <th @click="${() => this.onSortClick(column.field)}">
+                        ${y`<span class="flex-item">
+                          ${column.label}
+                          ${
+                            this.tableSort.direction === "asc"
+                              ? y`<svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                height="18px"
+                                width="18px"
+                                opacity="0"
+                                class="margin-left-4 ${this.tableSort.field === column.field ? "opacity" : ""}"
+                              >
+                                <path
+                                  d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
+                                />
+                              </svg>`
+                              : y`<svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                height="18px"
+                                width="18px"
+                                opacity="0"
+                                class="margin-left-4 dsc ${this.tableSort.field === column.field ? "opacity" : ""}"
+                              >
+                                <path
+                                  d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
+                                />
+                              </svg>`
                           }
-                          if (!this.editMode && this.selectedRow === item) {
-                            this.selectedRow = null;
-                          } else {
-                            this.selectedRow = item;
-                          }
-                          this.requestUpdate();
-                        }}"
-                        class="table-row ${this.editMode && this.selectedRow === item ? "edit" : ""} ${this.selectedRow === item ? "selected" : ""}"
-                      >
-                        ${this.rowNumber ? y`<td style="text-align: right">${this.getRowNumber(item)}</td>` : null}
-                        ${this.columns.map((column) => {
-                          let cellContent;
-
-                          if (this.editMode && this.selectedRow === item) {
-                            this.renderEditField(item, column);
-                          } else {
-                            this.renderDisplayField(item, column);
-                          }
-
-                          return y`
-                            <td>
-                              ${cellContent}
-                            </td>
-                          `;
-                        })}
-
-                      </tr>
+                        </span>`}
+                      </th>
                     `
                   )}
-                </tbody>
-              </table>
-            </div>
-            ${this.onLoad(this.collection)}
-            ${this.totalPages > 1 ? this.renderPagination() : null}
-          `;
-        },
-      },
-      {
-        kind: "method",
-        key: "renderPagination",
-        value: function renderPagination() {
-          let start = (this.currentPage - 1) * this.pageSize + 1;
-          let _end = start * 1 + this.pageSize * 1 - 1;
-          let total = this.filteredData.length;
-          let end = Math.min(_end, total);
-          console.log("PAGINATION", start, _end, end, total);
+                </tr>
+              </thead>
+              <tbody>
+                ${this.pageData.map(
+                  (item) => y`
+                    <tr
+                      @click="${() => {
+                        if (this.readOnly) return;
+                        if (this.editMode && this.selectedRow !== item) {
+                          this.unselect();
+                        }
+                        if (!this.editMode && this.selectedRow === item) {
+                          this.selectedRow = null;
+                        } else {
+                          this.selectedRow = item;
+                        }
+                        this.requestUpdate();
+                      }}"
+                      class="table-row ${this.editMode && this.selectedRow === item ? "edit" : ""} ${this.selectedRow === item ? "selected" : ""}"
+                    >
+                      ${this.rowNumber ? y`<td style="text-align: right">${this.getRowNumber(item)}</td>` : null}
+                      ${this.columns.map((column) => {
+                        let cellContent;
 
-          return y`
-              <div class="pagination">
-                <span class="pagination-total">${start}-${end} of ${total}</span>
-                <button
-                  class="pagination-button"
-                  @click="${() => this.onPageChange(1)}"
-                  ?disabled="${this.currentPage === 1}"
-                >
-                  <svg
-                    height="24px"
-                    width="24px"
-                    fill="currentColor"
-                    focusable="false"
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M18.41 16.59 13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z"
-                    ></path>
-                  </svg>
-                </button>
-                <button
-                  class="pagination-button"
-                  @click="${() => this.onPageChange(this.currentPage - 1)}"
-                  ?disabled="${this.currentPage === 1}"
-                >
-                  <svg
-                    height="24px"
-                    width="24px"
-                    fill="currentColor"
-                    focusable="false"
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M15.41 16.59 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"
-                    ></path>
-                  </svg>
-                </button>
-                <button
-                  class="pagination-button"
-                  @click="${() => this.onPageChange(this.currentPage + 1)}"
-                  ?disabled="${this.currentPage === this.totalPages}"
-                >
-                  <svg
-                    height="24px"
-                    width="24px"
-                    fill="currentColor"
-                    focusable="false"
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
-                    ></path>
-                  </svg>
-                </button>
-                <button
-                  class="pagination-button"
-                  @click="${() => this.onPageChange(this.totalPages)}"
-                  ?disabled="${this.currentPage === this.totalPages}"
-                >
-                  <svg
-                    height="24px"
-                    width="24px"
-                    fill="currentColor"
-                    focusable="false"
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M5.59 7.41 10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-              <script>
-                const nacTable = document.querySelector("eiu-table");
-              </script>
-            `;
-        },
+                        if (this.editMode && this.selectedRow === item) {
+                          this.renderEditField(item, column);
+                        } else {
+                          this.renderDisplayField(item, column);
+                        }
+
+                        return y`
+                          <td>
+                            ${cellContent}
+                          </td>
+                        `;
+                      })}
+
+                    </tr>
+                  `
+                )}
+              </tbody>
+            </table>
+          </div>
+          ${this.onLoad(this.collection)}
+          ${this.totalPages > 1 ? this.renderPagination() : null}
+        `;
       },
-      // method handlers - table function
-      {
-        kind: "method",
-        key: "unselect",
-        value: function unselect() {
-          this.selectedRow = null;
-          this.editMode = false;
-          this.tempEditRowData = null;
-          this.editCell = null;
-        },
+    },
+    {
+      kind: "method",
+      key: "renderPagination",
+      value: function renderPagination() {
+        let start = (this.currentPage - 1) * this.pageSize + 1;
+        let _end = start * 1 + this.pageSize * 1 - 1;
+        let total = this.filteredData.length;
+        let end = Math.min(_end, total);
+        console.log("PAGINATION", start, _end, end, total);
+
+        return y`
+            <div class="pagination">
+              <span class="pagination-total">${start}-${end} of ${total}</span>
+              <button
+                class="pagination-button"
+                @click="${() => this.onPageChange(1)}"
+                ?disabled="${this.currentPage === 1}"
+              >
+                <svg
+                  height="24px"
+                  width="24px"
+                  fill="currentColor"
+                  focusable="false"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M18.41 16.59 13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                class="pagination-button"
+                @click="${() => this.onPageChange(this.currentPage - 1)}"
+                ?disabled="${this.currentPage === 1}"
+              >
+                <svg
+                  height="24px"
+                  width="24px"
+                  fill="currentColor"
+                  focusable="false"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 16.59 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                class="pagination-button"
+                @click="${() => this.onPageChange(this.currentPage + 1)}"
+                ?disabled="${this.currentPage === this.totalPages}"
+              >
+                <svg
+                  height="24px"
+                  width="24px"
+                  fill="currentColor"
+                  focusable="false"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                class="pagination-button"
+                @click="${() => this.onPageChange(this.totalPages)}"
+                ?disabled="${this.currentPage === this.totalPages}"
+              >
+                <svg
+                  height="24px"
+                  width="24px"
+                  fill="currentColor"
+                  focusable="false"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M5.59 7.41 10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <script>
+              const nacTable = document.querySelector("eiu-table");
+            </script>
+          `;
       },
-      {
-        kind: "method",
-        key: "saveSelectedRow",
-        value: function saveSelectedRow() {
-          if (!this.selectedRow) return;
-          const editedRow = this.data.find((item) => item === this.selectedRow);
-          if (editedRow) {
-            Object.assign(editedRow, this.tempEditRowData);
-            this.dispatchEvent(
-              new CustomEvent("change", {
-                detail: {
-                  collection: JSON.stringify(this.data),
-                },
-              })
-            );
-          }
-        },
+    },
+  ];
+  let tableHandlers = [
+    {
+      kind: "method",
+      key: "unselect",
+      value: function unselect() {
+        this.selectedRow = null;
+        this.editMode = false;
+        this.tempEditRowData = null;
+        this.editCell = null;
       },
-      {
-        kind: "method",
-        key: "updatePageData",
-        value: function updatePageData() {
-          this.totalPages = Math.ceil(this.filteredData.length / this.pageSize);
-          if (this.currentPage > this.totalPages) {
-            this.currentPage = this.totalPages;
-          }
-          if (this.totalPages < 1) {
-            this.currentPage = 1;
-          }
-          this.requestUpdate();
-        },
+    },
+    {
+      kind: "method",
+      key: "saveSelectedRow",
+      value: function saveSelectedRow() {
+        if (!this.selectedRow) return;
+        const editedRow = this.data.find((item) => item === this.selectedRow);
+        if (editedRow) {
+          Object.assign(editedRow, this.tempEditRowData);
+          this.dispatchEvent(
+            new CustomEvent("change", {
+              detail: {
+                collection: JSON.stringify(this.data),
+              },
+            })
+          );
+        }
       },
-      {
-        kind: "method",
-        key: "onSortClick",
-        value: function onSortClick(field) {
-          const { direction } = this.tableSort;
-          this.unselect();
-          if (this.tableSort.field === field) {
-            this.tableSort.direction = direction === "asc" ? "desc" : "asc";
-          } else {
-            this.tableSort = {
-              field: field,
-              direction: "asc",
-            };
-          }
+    },
+    {
+      kind: "method",
+      key: "updatePageData",
+      value: function updatePageData() {
+        this.totalPages = Math.ceil(this.filteredData.length / this.pageSize);
+        if (this.currentPage > this.totalPages) {
+          this.currentPage = this.totalPages;
+        }
+        if (this.totalPages < 1) {
           this.currentPage = 1;
-          this.updatePageData();
-        },
+        }
+        this.requestUpdate();
       },
-      {
-        kind: "method",
-        key: "onPageChange",
-        value: function onPageChange(page) {
-          this.unselect();
-          if (page >= 1 && page <= this.totalPages) {
-            this.currentPage = page;
-            this.updatePageData();
-          }
-        },
-      },
-      {
-        kind: "method",
-        key: "onCellEdit",
-        value: function onCellEdit({ field, value }) {
-          if (this.editCell) {
-            const found = this.tempEditRowData || this.pageData.find((item) => item === this.editCell?.row);
-            if (!found) return;
-            const editedRow = {
-              ...found,
-            };
-            editedRow[field] = value;
-            this.tempEditRowData = editedRow;
-          }
-        },
-      },
-      {
-        kind: "method",
-        key: "onAddRow",
-        value: function onAddRow() {
-          this.searchText = "";
+    },
+    {
+      kind: "method",
+      key: "onSortClick",
+      value: function onSortClick(field) {
+        const { direction } = this.tableSort;
+        this.unselect();
+        if (this.tableSort.field === field) {
+          this.tableSort.direction = direction === "asc" ? "desc" : "asc";
+        } else {
           this.tableSort = {
-            field: "",
+            field: field,
             direction: "asc",
           };
-          const searchInput = this.shadowRoot?.querySelector("#search-input");
-          if (searchInput) searchInput.value = "";
+        }
+        this.currentPage = 1;
+        this.updatePageData();
+      },
+    },
+    {
+      kind: "method",
+      key: "onPageChange",
+      value: function onPageChange(page) {
+        this.unselect();
+        if (page >= 1 && page <= this.totalPages) {
+          this.currentPage = page;
           this.updatePageData();
-          const newRow = {};
-          this.columns.forEach((column) => (newRow[column.field] = ""));
-          this.data.push(newRow);
-          this.selectedRow = newRow;
-          this.editMode = true;
-          this.editCell = null;
-          this.updatePageData();
-          this.currentPage = this.totalPages;
-          this.focusInputOnEdit();
-        },
+        }
       },
-      {
-        kind: "method",
-        key: "onEditRow",
-        value: function onEditRow() {
-          if (this.selectedRow) {
-            this.editMode = true;
-            this.editCell = {
-              columnName: "",
-              row: this.selectedRow,
-            };
-            this.requestUpdate();
-            this.focusInputOnEdit();
-          }
-        },
-      },
-      {
-        kind: "method",
-        key: "onDeleteRow",
-        value: function onDeleteRow() {
-          if (this.selectedRow) {
-            const index = this.data.indexOf(this.selectedRow);
-            this.data.splice(index, 1);
-            this.unselect();
-            this.updatePageData();
-            this.dispatchEvent(
-              new CustomEvent("change", {
-                detail: {
-                  collection: JSON.stringify(this.data),
-                },
-              })
-            );
-            this.onChange(this.data);
-          }
-        },
-      },
-      {
-        kind: "method",
-        key: "onSaveRow",
-        value: function onSaveRow() {
-          if (!this.selectedRow) return;
-          if (this.editMode) {
-            this.editMode = false;
-            this.saveSelectedRow();
-            this.updatePageData();
-            this.onChange(this.data);
-          }
-        },
-      },
-      {
-        kind: "method",
-        key: "onDiscardRow",
-        value: function onDiscardRow() {
-          if (this.selectedRow) {
-            const editedRow = this.pageData.find((item) => item === this.selectedRow);
-            if (editedRow) {
-              this.columns.forEach((column) => {});
-              this.editMode = false;
-              this.editCell = null;
-              this.requestUpdate();
-              this.onChange(this.data);
-            }
-          }
-        },
-      },
-      {
-        kind: "method",
-        key: "onChange",
-        value: function onChange(e) {
-          const value = e;
-          const args = {
-            bubbles: true,
-            cancelable: false,
-            composed: true,
-            detail: value,
+    },
+    {
+      kind: "method",
+      key: "onCellEdit",
+      value: function onCellEdit({ field, value }) {
+        if (this.editCell) {
+          const found = this.tempEditRowData || this.pageData.find((item) => item === this.editCell?.row);
+          if (!found) return;
+          const editedRow = {
+            ...found,
           };
-          const event = new CustomEvent("ntx-value-change", args);
-          this.dispatchEvent(event);
-        },
+          editedRow[field] = value;
+          this.tempEditRowData = editedRow;
+        }
       },
-      {
-        kind: "method",
-        key: "onLoad",
-        value: function onLoad(e) {
-          console.info("data: " + this.data);
-          var dataCheck = this.data.toString();
-          if (dataCheck == null || dataCheck == "") {
-            this.onChange(this.collection);
+    },
+    {
+      kind: "method",
+      key: "onAddRow",
+      value: function onAddRow() {
+        this.searchText = "";
+        this.tableSort = {
+          field: "",
+          direction: "asc",
+        };
+        const searchInput = this.shadowRoot?.querySelector("#search-input");
+        if (searchInput) searchInput.value = "";
+        this.updatePageData();
+        const newRow = {};
+        this.columns.forEach((column) => (newRow[column.field] = ""));
+        this.data.push(newRow);
+        this.selectedRow = newRow;
+        this.editMode = true;
+        this.editCell = null;
+        this.updatePageData();
+        this.currentPage = this.totalPages;
+        this.focusInputOnEdit();
+      },
+    },
+    {
+      kind: "method",
+      key: "onEditRow",
+      value: function onEditRow() {
+        if (this.selectedRow) {
+          this.editMode = true;
+          this.editCell = {
+            columnName: "",
+            row: this.selectedRow,
+          };
+          this.requestUpdate();
+          this.focusInputOnEdit();
+        }
+      },
+    },
+    {
+      kind: "method",
+      key: "onDeleteRow",
+      value: function onDeleteRow() {
+        if (this.selectedRow) {
+          const index = this.data.indexOf(this.selectedRow);
+          this.data.splice(index, 1);
+          this.unselect();
+          this.updatePageData();
+          this.dispatchEvent(
+            new CustomEvent("change", {
+              detail: {
+                collection: JSON.stringify(this.data),
+              },
+            })
+          );
+          this.onChange(this.data);
+        }
+      },
+    },
+    {
+      kind: "method",
+      key: "onSaveRow",
+      value: function onSaveRow() {
+        if (!this.selectedRow) return;
+        if (this.editMode) {
+          this.editMode = false;
+          this.saveSelectedRow();
+          this.updatePageData();
+          this.onChange(this.data);
+        }
+      },
+    },
+    {
+      kind: "method",
+      key: "onDiscardRow",
+      value: function onDiscardRow() {
+        if (this.selectedRow) {
+          const editedRow = this.pageData.find((item) => item === this.selectedRow);
+          if (editedRow) {
+            this.columns.forEach((column) => {});
+            this.editMode = false;
+            this.editCell = null;
+            this.requestUpdate();
+            this.onChange(this.data);
           }
-        },
+        }
       },
-      {
-        kind: "method",
-        key: "focusInputOnEdit",
-        value: function focusInputOnEdit() {
-          setTimeout(() => {
-            const inputElement = this.shadowRoot?.querySelector(".selected")?.querySelector("input");
-            if (inputElement) inputElement.focus();
-          }, 50);
-        },
+    },
+    {
+      kind: "method",
+      key: "onChange",
+      value: function onChange(e) {
+        const value = e;
+        const args = {
+          bubbles: true,
+          cancelable: false,
+          composed: true,
+          detail: value,
+        };
+        const event = new CustomEvent("ntx-value-change", args);
+        this.dispatchEvent(event);
       },
-      // method handlers - custom
-      {
-        kind: "method",
-        key: "getRowNumber",
-        value: function getRowNumber(item) {
-          return this.data.indexOf(item) + 1;
-        },
+    },
+    {
+      kind: "method",
+      key: "onLoad",
+      value: function onLoad(e) {
+        console.info("data: " + this.data);
+        var dataCheck = this.data.toString();
+        if (dataCheck == null || dataCheck == "") {
+          this.onChange(this.collection);
+        }
       },
-      {
-        kind: "method",
-        key: "isDateField",
-        value: function isDateField(fieldName) {
-          return fieldName.toLowerCase().indexOf("datetime") > -1;
-        },
+    },
+    {
+      kind: "method",
+      key: "focusInputOnEdit",
+      value: function focusInputOnEdit() {
+        setTimeout(() => {
+          const inputElement = this.shadowRoot?.querySelector(".selected")?.querySelector("input");
+          if (inputElement) inputElement.focus();
+        }, 50);
       },
-      {
-        kind: "method",
-        key: "formatDate",
-        value: function formatDate(dateInput) {
-          let date;
-          if (dateInput instanceof Date) {
-            if (isNaN(dateInput.getTime())) {
-              throw new Error("Invalid Date object");
-            }
-            date = dateInput;
-          } else if (typeof dateInput === "string") {
-            date = new Date(dateInput);
-            if (isNaN(date.getTime())) {
-              throw new Error("Invalid date string");
-            }
-          } else {
-            throw new Error("Input must be a Date object or a date string");
+    },
+  ];
+  let functionHandlers = [
+    {
+      kind: "method",
+      key: "getRowNumber",
+      value: function getRowNumber(item) {
+        return this.data.indexOf(item) + 1;
+      },
+    },
+    {
+      kind: "method",
+      key: "isDateField",
+      value: function isDateField(fieldName) {
+        return fieldName.toLowerCase().indexOf("datetime") > -1;
+      },
+    },
+    {
+      kind: "method",
+      key: "formatDate",
+      value: function formatDate(dateInput) {
+        let date;
+        if (dateInput instanceof Date) {
+          if (isNaN(dateInput.getTime())) {
+            throw new Error("Invalid Date object");
           }
-          const year = date.getFullYear();
-          const month = String(date.getMonth() + 1).padStart(2, "0"); // zero-based month
-          const day = String(date.getDate()).padStart(2, "0");
-          const hours = String(date.getHours()).padStart(2, "0");
-          const minutes = String(date.getMinutes()).padStart(2, "0");
-          return `${year}-${month}-${day} ${hours}:${minutes}`;
-        },
-      },
-      {
-        kind: "method",
-        key: "isSelectField",
-        value: function isSelectField(keyToCheck) {
-          let dataObj = this.options;
-          if (!dataObj || typeof dataObj !== "object" || typeof keyToCheck !== "string") {
-            return false;
+          date = dateInput;
+        } else if (typeof dateInput === "string") {
+          date = new Date(dateInput);
+          if (isNaN(date.getTime())) {
+            throw new Error("Invalid date string");
           }
-          return Object.prototype.hasOwnProperty.call(dataObj, keyToCheck);
-        },
+        } else {
+          throw new Error("Input must be a Date object or a date string");
+        }
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0"); // zero-based month
+        const day = String(date.getDate()).padStart(2, "0");
+        const hours = String(date.getHours()).padStart(2, "0");
+        const minutes = String(date.getMinutes()).padStart(2, "0");
+        return `${year}-${month}-${day} ${hours}:${minutes}`;
       },
-      {
-        kind: "method",
-        key: "generateOptions",
-        value: function generateOptions(verbose = false) {
-          try {
-            // Check if all parameters are null or empty string after parsing
-            const allNullOrEmpty = [this.lookupLabels, this.lookupValues, this.lookupMapping].every((p) => p === null || (typeof p === "string" && p.trim() === ""));
-            if (allNullOrEmpty) {
-              return null;
-            }
-
-            let lookupLabels = JSON.parse(this.lookupLabels);
-            let lookupValues = JSON.parse(this.lookupValues);
-            let lookupMapping = JSON.parse(this.lookupMapping);
-
-            if (!Array.isArray(lookupLabels) || !Array.isArray(lookupValues) || !Array.isArray(lookupMapping)) {
-              throw new Error("All inputs must be arrays.");
-            }
-
-            if (lookupLabels.length !== lookupValues.length || lookupLabels.length !== lookupMapping.length) {
-              throw new Error("Input arrays lookupLabels, lookupValues, and lookupMapping must have the same length.");
-            }
-
-            const result = {};
-
-            for (let i = 0; i < lookupMapping.length; i++) {
-              if (!Array.isArray(lookupLabels[i]) || !Array.isArray(lookupValues[i])) {
-                throw new Error(`Elements at index ${i} in lookupLabels and lookupValues must be arrays.`);
-              }
-
-              if (lookupLabels[i].length !== lookupValues[i].length) {
-                throw new Error(`Element count mismatch at index ${i}: lookupLabels has ${lookupLabels[i].length} elements, but lookupValues has ${lookupValues[i].length} elements.`);
-              }
-
-              result[lookupMapping[i]] = lookupLabels[i].map((label, index) => ({
-                label,
-                value: lookupValues[i][index],
-              }));
-            }
-
-            return result;
-          } catch (error) {
-            if (verbose) {
-              console.log("Validation error:", error.message);
-            }
-            alert(`Error: ${error.message}`);
-            throw error;
+    },
+    {
+      kind: "method",
+      key: "isSelectField",
+      value: function isSelectField(keyToCheck) {
+        let dataObj = this.options;
+        if (!dataObj || typeof dataObj !== "object" || typeof keyToCheck !== "string") {
+          return false;
+        }
+        return Object.prototype.hasOwnProperty.call(dataObj, keyToCheck);
+      },
+    },
+    {
+      kind: "method",
+      key: "generateOptions",
+      value: function generateOptions(verbose = false) {
+        try {
+          // Check if all parameters are null or empty string after parsing
+          const allNullOrEmpty = [this.lookupLabels, this.lookupValues, this.lookupMapping].every((p) => p === null || (typeof p === "string" && p.trim() === ""));
+          if (allNullOrEmpty) {
+            return null;
           }
-        },
+
+          let lookupLabels = JSON.parse(this.lookupLabels);
+          let lookupValues = JSON.parse(this.lookupValues);
+          let lookupMapping = JSON.parse(this.lookupMapping);
+
+          if (!Array.isArray(lookupLabels) || !Array.isArray(lookupValues) || !Array.isArray(lookupMapping)) {
+            throw new Error("All inputs must be arrays.");
+          }
+
+          if (lookupLabels.length !== lookupValues.length || lookupLabels.length !== lookupMapping.length) {
+            throw new Error("Input arrays lookupLabels, lookupValues, and lookupMapping must have the same length.");
+          }
+
+          const result = {};
+
+          for (let i = 0; i < lookupMapping.length; i++) {
+            if (!Array.isArray(lookupLabels[i]) || !Array.isArray(lookupValues[i])) {
+              throw new Error(`Elements at index ${i} in lookupLabels and lookupValues must be arrays.`);
+            }
+
+            if (lookupLabels[i].length !== lookupValues[i].length) {
+              throw new Error(`Element count mismatch at index ${i}: lookupLabels has ${lookupLabels[i].length} elements, but lookupValues has ${lookupValues[i].length} elements.`);
+            }
+
+            result[lookupMapping[i]] = lookupLabels[i].map((label, index) => ({
+              label,
+              value: lookupValues[i][index],
+            }));
+          }
+
+          return result;
+        } catch (error) {
+          if (verbose) {
+            console.log("Validation error:", error.message);
+          }
+          alert(`Error: ${error.message}`);
+          throw error;
+        }
       },
-    ],
+    },
+  ];
+  return {
+    F: AndysTable,
+    d: [...fieldHandlers, ...getHandlers, ...mainHandlers, ...renderHandlers, ...tableHandlers, ...functionHandlers],
   };
 });
 
