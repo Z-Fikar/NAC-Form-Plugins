@@ -405,291 +405,291 @@ _decorate(
   s
 );
 
-let AndysTable = _decorate(
-  [e$1("eiu-table")],
-  function (_initialize, _LitElement) {
-    class AndysTable extends _LitElement {
-      constructor(...args) {
-        super(...args);
-        _initialize(this);
-      }
+let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElement) {
+  class AndysTable extends _LitElement {
+    constructor(...args) {
+      super(...args);
+      _initialize(this);
     }
-    return {
-      F: AndysTable,
-      d: [
-        // field handlers
-        {
-          kind: "field",
-          static: true,
-          key: "styles",
-          value() {
-            return styles;
-          },
+  }
+  return {
+    F: AndysTable,
+    d: [
+      // field handlers
+      {
+        kind: "field",
+        static: true,
+        key: "styles",
+        value() {
+          return styles;
         },
-        {
-          kind: "field",
-          decorators: [
-            e({
-              type: String,
-            }),
-          ],
-          key: "collection",
-          value() {
-            return "";
-          },
+      },
+      {
+        kind: "field",
+        decorators: [
+          e({
+            type: String,
+          }),
+        ],
+        key: "collection",
+        value() {
+          return "";
         },
-        {
-          kind: "field",
-          decorators: [
-            e({
-              type: String,
-            }),
-          ],
-          key: "lookupLabels",
-          value() {
-            return "";
-          },
+      },
+      {
+        kind: "field",
+        decorators: [
+          e({
+            type: String,
+          }),
+        ],
+        key: "lookupLabels",
+        value() {
+          return "";
         },
-        {
-          kind: "field",
-          decorators: [
-            e({
-              type: String,
-            }),
-          ],
-          key: "lookupValues",
-          value() {
-            return "";
-          },
+      },
+      {
+        kind: "field",
+        decorators: [
+          e({
+            type: String,
+          }),
+        ],
+        key: "lookupValues",
+        value() {
+          return "";
         },
-        {
-          kind: "field",
-          decorators: [
-            e({
-              type: String,
-            }),
-          ],
-          key: "lookupMapping",
-          value() {
-            return "";
-          },
+      },
+      {
+        kind: "field",
+        decorators: [
+          e({
+            type: String,
+          }),
+        ],
+        key: "lookupMapping",
+        value() {
+          return "";
         },
-        {
-          kind: "field",
-          decorators: [
-            e({
-              type: String,
-            }),
-          ],
-          key: "rowNumber",
-          value() {
-            return false;
-          },
+      },
+      {
+        kind: "field",
+        decorators: [
+          e({
+            type: String,
+          }),
+        ],
+        key: "rowNumber",
+        value() {
+          return false;
         },
-        {
-          kind: "field",
-          decorators: [
-            e({
-              type: String,
-            }),
-          ],
-          key: "searchable",
-          value() {
-            return true;
-          },
+      },
+      {
+        kind: "field",
+        decorators: [
+          e({
+            type: String,
+          }),
+        ],
+        key: "searchable",
+        value() {
+          return true;
         },
-        {
-          kind: "field",
-          decorators: [
-            e({
-              type: String,
-            }),
-          ],
-          key: "readOnly",
-          value() {
-            return false;
-          },
+      },
+      {
+        kind: "field",
+        decorators: [
+          e({
+            type: String,
+          }),
+        ],
+        key: "readOnly",
+        value() {
+          return false;
         },
-        {
-          kind: "field",
-          decorators: [
-            e({
-              type: String,
-            }),
-          ],
-          key: "visibility",
-          value() {
-            return true;
-          },
+      },
+      {
+        kind: "field",
+        decorators: [
+          e({
+            type: String,
+          }),
+        ],
+        key: "visibility",
+        value() {
+          return true;
         },
-        {
-          kind: "field",
-          key: "data",
-          value() {
-            return [];
-          },
+      },
+      {
+        kind: "field",
+        key: "data",
+        value() {
+          return [];
         },
-        {
-          kind: "field",
-          key: "options",
-          value() {
-            return null;
-          },
+      },
+      {
+        kind: "field",
+        key: "options",
+        value() {
+          return null;
         },
-        {
-          kind: "field",
-          key: "editCell",
-          value() {
-            return null;
-          },
+      },
+      {
+        kind: "field",
+        key: "editCell",
+        value() {
+          return null;
         },
-        {
-          kind: "field",
-          key: "pageData",
-          value() {
-            return [];
-          },
+      },
+      {
+        kind: "field",
+        key: "pageData",
+        value() {
+          return [];
         },
-        {
-          kind: "field",
-          key: "totalPages",
-          value() {
-            return 1;
-          },
+      },
+      {
+        kind: "field",
+        key: "totalPages",
+        value() {
+          return 1;
         },
-        {
-          kind: "field",
-          key: "currentPage",
-          value() {
-            return 1;
-          },
+      },
+      {
+        kind: "field",
+        key: "currentPage",
+        value() {
+          return 1;
         },
-        {
-          kind: "field",
-          key: "pageSize",
-          value() {
-            return 10;
-          },
+      },
+      {
+        kind: "field",
+        key: "pageSize",
+        value() {
+          return 10;
         },
-        {
-          kind: "field",
-          key: "searchText",
-          value() {
-            return "";
-          },
+      },
+      {
+        kind: "field",
+        key: "searchText",
+        value() {
+          return "";
         },
-        {
-          kind: "field",
-          key: "tableSort",
-          value() {
+      },
+      {
+        kind: "field",
+        key: "tableSort",
+        value() {
+          return {
+            field: "",
+            direction: "asc",
+          };
+        },
+      },
+      {
+        kind: "field",
+        key: "selectedRow",
+        value() {
+          return null;
+        },
+      },
+      {
+        kind: "field",
+        key: "editMode",
+        value() {
+          return false;
+        },
+      },
+      {
+        kind: "field",
+        key: "tempEditRowData",
+        value() {
+          return null;
+        },
+      },
+      // get handlers
+      {
+        kind: "get",
+        key: "filteredData",
+        value: function filteredData() {
+          return this.data.filter((item) => {
+            return Object.values(item)
+              .map((val) => String(val))
+              .some((val) => val.toLowerCase().includes(this.searchText.toLowerCase()));
+          });
+        },
+      },
+      {
+        kind: "get",
+        key: "sortedData",
+        value: function sortedData() {
+          const { field, direction } = this.tableSort;
+          return this.filteredData.sort((a, b) => {
+            const aVal = a[field];
+            const bVal = b[field];
+            if (aVal < bVal) return direction === "asc" ? -1 : 1;
+            if (aVal > bVal) return direction === "asc" ? 1 : -1;
+            return 0;
+          });
+        },
+      },
+      {
+        kind: "get",
+        key: "columns",
+        value: function columns() {
+          const sampleRow = this.data[0] || {};
+          return Object.keys(sampleRow).map((field) => {
             return {
-              field: "",
-              direction: "asc",
+              label: field,
+              field: field,
             };
-          },
+          });
         },
-        {
-          kind: "field",
-          key: "selectedRow",
-          value() {
-            return null;
-          },
-        },
-        {
-          kind: "field",
-          key: "editMode",
-          value() {
-            return false;
-          },
-        },
-        {
-          kind: "field",
-          key: "tempEditRowData",
-          value() {
-            return null;
-          },
-        },
-        // get handlers
-        {
-          kind: "get",
-          key: "filteredData",
-          value: function filteredData() {
-            return this.data.filter((item) => {
-              return Object.values(item)
-                .map((val) => String(val))
-                .some((val) => val.toLowerCase().includes(this.searchText.toLowerCase()));
-            });
-          },
-        },
-        {
-          kind: "get",
-          key: "sortedData",
-          value: function sortedData() {
-            const { field, direction } = this.tableSort;
-            return this.filteredData.sort((a, b) => {
-              const aVal = a[field];
-              const bVal = b[field];
-              if (aVal < bVal) return direction === "asc" ? -1 : 1;
-              if (aVal > bVal) return direction === "asc" ? 1 : -1;
-              return 0;
-            });
-          },
-        },
-        {
-          kind: "get",
-          key: "columns",
-          value: function columns() {
-            const sampleRow = this.data[0] || {};
-            return Object.keys(sampleRow).map((field) => {
-              return {
-                label: field,
-                field: field,
-              };
-            });
-          },
-        },
-        // method handlers - main
-        {
-          kind: "method",
-          key: "updated",
-          value: function updated(changedProps) {
-            if (changedProps.has("collection")) {
-              try {
-                this.data = JSON.parse(this.collection);
-                this.updatePageData();
-              } catch (e) {
-                console.error("Error parsing table data: ", e);
-              }
+      },
+      // method handlers - main
+      {
+        kind: "method",
+        key: "updated",
+        value: function updated(changedProps) {
+          if (changedProps.has("collection")) {
+            try {
+              this.data = JSON.parse(this.collection);
+              this.options = this.generateOptions(this.lookupLabels, this.lookupValues, this.lookupMapping, true);
+              this.updatePageData();
+              console.log(this.options);
+            } catch (e) {
+              console.error("Error parsing table data: ", e);
             }
-          },
+          }
         },
-        {
-          kind: "method",
-          static: true,
-          key: "getMetaConfig",
-          value: function getMetaConfig() {
-            return import("./eiu-table.config.js").then((x) => x.config);
-          },
+      },
+      {
+        kind: "method",
+        static: true,
+        key: "getMetaConfig",
+        value: function getMetaConfig() {
+          return import("./eiu-table.config.js").then((x) => x.config);
         },
-        // method handlers - render
-        {
-          kind: "method",
-          key: "render",
-          value: function render() {
-            return y`
+      },
+      // method handlers - render
+      {
+        kind: "method",
+        key: "render",
+        value: function render() {
+          return y`
               <div class="top-panel ${!this.searchable && this.readOnly ? "d-none" : ""}">
                 ${this.renderSearch()} ${this.readOnly ? null : this.renderToolbar()}
               </div>
               <br />
               ${this.renderTable()}
             `;
-          },
         },
-        {
-          kind: "method",
-          key: "renderSearch",
-          value: function renderSearch() {
-            return y`<div class="search-wrapper ${this.searchable ? "" : "v-hidden"}">
+      },
+      {
+        kind: "method",
+        key: "renderSearch",
+        value: function renderSearch() {
+          return y`<div class="search-wrapper ${this.searchable ? "" : "v-hidden"}">
               <svg
                 class="search-icon"
                 height="24px"
@@ -712,13 +712,13 @@ let AndysTable = _decorate(
                 }}
               />
             </div> `;
-          },
         },
-        {
-          kind: "method",
-          key: "renderToolbar",
-          value: function renderToolbar() {
-            return y`
+      },
+      {
+        kind: "method",
+        key: "renderToolbar",
+        value: function renderToolbar() {
+          return y`
               <eiu-toolbar
                 @add-row="${this.onAddRow}"
                 @edit-row="${this.onEditRow}"
@@ -729,18 +729,18 @@ let AndysTable = _decorate(
                 .hasSelectedRow="${!!this.selectedRow}"
               ></eiu-toolbar>
             `;
-          },
         },
-        {
-          kind: "method",
-          key: "renderTable",
-          value: function renderTable() {
-            let start = (this.currentPage - 1) * this.pageSize;
-            let end = start * 1 + this.pageSize * 1;
-            this.pageData = this.sortedData.slice(start, end);
-            console.log("PAGE DATA", start, end, this.pageData);
+      },
+      {
+        kind: "method",
+        key: "renderTable",
+        value: function renderTable() {
+          let start = (this.currentPage - 1) * this.pageSize;
+          let end = start * 1 + this.pageSize * 1;
+          this.pageData = this.sortedData.slice(start, end);
+          console.log("PAGE DATA", start, end, this.pageData);
 
-            return y`
+          return y`
               <div class="table-wrapper">
                 <table>
                   <thead>
@@ -879,19 +879,19 @@ let AndysTable = _decorate(
               ${this.onLoad(this.collection)}
               ${this.totalPages > 1 ? this.renderPagination() : null}
             `;
-          },
         },
-        {
-          kind: "method",
-          key: "renderPagination",
-          value: function renderPagination() {
-            let start = (this.currentPage - 1) * this.pageSize + 1;
-            let _end = start * 1 + this.pageSize * 1 - 1;
-            let total = this.filteredData.length;
-            let end = Math.min(_end, total);
-            console.log("PAGINATION", start, _end, end, total);
+      },
+      {
+        kind: "method",
+        key: "renderPagination",
+        value: function renderPagination() {
+          let start = (this.currentPage - 1) * this.pageSize + 1;
+          let _end = start * 1 + this.pageSize * 1 - 1;
+          let total = this.filteredData.length;
+          let end = Math.min(_end, total);
+          console.log("PAGINATION", start, _end, end, total);
 
-            return y`
+          return y`
               <div class="pagination">
                 <span class="pagination-total">${start}-${end} of ${total}</span>
                 <button
@@ -971,263 +971,301 @@ let AndysTable = _decorate(
                 const nacTable = document.querySelector("eiu-table");
               </script>
             `;
-          },
         },
-        // method handlers - table function
-        {
-          kind: "method",
-          key: "unselect",
-          value: function unselect() {
-            this.selectedRow = null;
-            this.editMode = false;
-            this.tempEditRowData = null;
-            this.editCell = null;
-          },
+      },
+      // method handlers - table function
+      {
+        kind: "method",
+        key: "unselect",
+        value: function unselect() {
+          this.selectedRow = null;
+          this.editMode = false;
+          this.tempEditRowData = null;
+          this.editCell = null;
         },
-        {
-          kind: "method",
-          key: "saveSelectedRow",
-          value: function saveSelectedRow() {
-            if (!this.selectedRow) return;
-            const editedRow = this.data.find((item) => item === this.selectedRow);
-            if (editedRow) {
-              Object.assign(editedRow, this.tempEditRowData);
-              this.dispatchEvent(
-                new CustomEvent("change", {
-                  detail: {
-                    collection: JSON.stringify(this.data),
-                  },
-                })
-              );
-            }
-          },
+      },
+      {
+        kind: "method",
+        key: "saveSelectedRow",
+        value: function saveSelectedRow() {
+          if (!this.selectedRow) return;
+          const editedRow = this.data.find((item) => item === this.selectedRow);
+          if (editedRow) {
+            Object.assign(editedRow, this.tempEditRowData);
+            this.dispatchEvent(
+              new CustomEvent("change", {
+                detail: {
+                  collection: JSON.stringify(this.data),
+                },
+              })
+            );
+          }
         },
-        {
-          kind: "method",
-          key: "updatePageData",
-          value: function updatePageData() {
-            this.totalPages = Math.ceil(this.filteredData.length / this.pageSize);
-            if (this.currentPage > this.totalPages) {
-              this.currentPage = this.totalPages;
-            }
-            if (this.totalPages < 1) {
-              this.currentPage = 1;
-            }
-            this.requestUpdate();
-          },
-        },
-        {
-          kind: "method",
-          key: "onSortClick",
-          value: function onSortClick(field) {
-            const { direction } = this.tableSort;
-            this.unselect();
-            if (this.tableSort.field === field) {
-              this.tableSort.direction = direction === "asc" ? "desc" : "asc";
-            } else {
-              this.tableSort = {
-                field: field,
-                direction: "asc",
-              };
-            }
+      },
+      {
+        kind: "method",
+        key: "updatePageData",
+        value: function updatePageData() {
+          this.totalPages = Math.ceil(this.filteredData.length / this.pageSize);
+          if (this.currentPage > this.totalPages) {
+            this.currentPage = this.totalPages;
+          }
+          if (this.totalPages < 1) {
             this.currentPage = 1;
-            this.updatePageData();
-          },
+          }
+          this.requestUpdate();
         },
-        {
-          kind: "method",
-          key: "onPageChange",
-          value: function onPageChange(page) {
-            this.unselect();
-            if (page >= 1 && page <= this.totalPages) {
-              this.currentPage = page;
-              this.updatePageData();
-            }
-          },
-        },
-        {
-          kind: "method",
-          key: "onCellEdit",
-          value: function onCellEdit({ field, value }) {
-            if (this.editCell) {
-              const found = this.tempEditRowData || this.pageData.find((item) => item === this.editCell?.row);
-              if (!found) return;
-              const editedRow = {
-                ...found,
-              };
-              editedRow[field] = value;
-              this.tempEditRowData = editedRow;
-            }
-          },
-        },
-        {
-          kind: "method",
-          key: "onAddRow",
-          value: function onAddRow() {
-            this.searchText = "";
+      },
+      {
+        kind: "method",
+        key: "onSortClick",
+        value: function onSortClick(field) {
+          const { direction } = this.tableSort;
+          this.unselect();
+          if (this.tableSort.field === field) {
+            this.tableSort.direction = direction === "asc" ? "desc" : "asc";
+          } else {
             this.tableSort = {
-              field: "",
+              field: field,
               direction: "asc",
             };
-            const searchInput = this.shadowRoot?.querySelector("#search-input");
-            if (searchInput) searchInput.value = "";
+          }
+          this.currentPage = 1;
+          this.updatePageData();
+        },
+      },
+      {
+        kind: "method",
+        key: "onPageChange",
+        value: function onPageChange(page) {
+          this.unselect();
+          if (page >= 1 && page <= this.totalPages) {
+            this.currentPage = page;
             this.updatePageData();
-            const newRow = {};
-            this.columns.forEach((column) => (newRow[column.field] = ""));
-            this.data.push(newRow);
-            this.selectedRow = newRow;
-            this.editMode = true;
-            this.editCell = null;
-            this.updatePageData();
-            this.currentPage = this.totalPages;
-            this.focusInputOnEdit();
-          },
+          }
         },
-        {
-          kind: "method",
-          key: "onEditRow",
-          value: function onEditRow() {
-            if (this.selectedRow) {
-              this.editMode = true;
-              this.editCell = {
-                columnName: "",
-                row: this.selectedRow,
-              };
-              this.requestUpdate();
-              this.focusInputOnEdit();
-            }
-          },
-        },
-        {
-          kind: "method",
-          key: "onDeleteRow",
-          value: function onDeleteRow() {
-            if (this.selectedRow) {
-              const index = this.data.indexOf(this.selectedRow);
-              this.data.splice(index, 1);
-              this.unselect();
-              this.updatePageData();
-              this.dispatchEvent(
-                new CustomEvent("change", {
-                  detail: {
-                    collection: JSON.stringify(this.data),
-                  },
-                })
-              );
-              this.onChange(this.data);
-            }
-          },
-        },
-        {
-          kind: "method",
-          key: "onSaveRow",
-          value: function onSaveRow() {
-            if (!this.selectedRow) return;
-            if (this.editMode) {
-              this.editMode = false;
-              this.saveSelectedRow();
-              this.updatePageData();
-              this.onChange(this.data);
-            }
-          },
-        },
-        {
-          kind: "method",
-          key: "onDiscardRow",
-          value: function onDiscardRow() {
-            if (this.selectedRow) {
-              const editedRow = this.pageData.find((item) => item === this.selectedRow);
-              if (editedRow) {
-                this.columns.forEach((column) => {});
-                this.editMode = false;
-                this.editCell = null;
-                this.requestUpdate();
-                this.onChange(this.data);
-              }
-            }
-          },
-        },
-        {
-          kind: "method",
-          key: "onChange",
-          value: function onChange(e) {
-            const value = e;
-            const args = {
-              bubbles: true,
-              cancelable: false,
-              composed: true,
-              detail: value,
+      },
+      {
+        kind: "method",
+        key: "onCellEdit",
+        value: function onCellEdit({ field, value }) {
+          if (this.editCell) {
+            const found = this.tempEditRowData || this.pageData.find((item) => item === this.editCell?.row);
+            if (!found) return;
+            const editedRow = {
+              ...found,
             };
-            const event = new CustomEvent("ntx-value-change", args);
-            this.dispatchEvent(event);
-          },
+            editedRow[field] = value;
+            this.tempEditRowData = editedRow;
+          }
         },
-        {
-          kind: "method",
-          key: "onLoad",
-          value: function onLoad(e) {
-            console.info("data: " + this.data);
-            var dataCheck = this.data.toString();
-            if (dataCheck == null || dataCheck == "") {
-              this.onChange(this.collection);
+      },
+      {
+        kind: "method",
+        key: "onAddRow",
+        value: function onAddRow() {
+          this.searchText = "";
+          this.tableSort = {
+            field: "",
+            direction: "asc",
+          };
+          const searchInput = this.shadowRoot?.querySelector("#search-input");
+          if (searchInput) searchInput.value = "";
+          this.updatePageData();
+          const newRow = {};
+          this.columns.forEach((column) => (newRow[column.field] = ""));
+          this.data.push(newRow);
+          this.selectedRow = newRow;
+          this.editMode = true;
+          this.editCell = null;
+          this.updatePageData();
+          this.currentPage = this.totalPages;
+          this.focusInputOnEdit();
+        },
+      },
+      {
+        kind: "method",
+        key: "onEditRow",
+        value: function onEditRow() {
+          if (this.selectedRow) {
+            this.editMode = true;
+            this.editCell = {
+              columnName: "",
+              row: this.selectedRow,
+            };
+            this.requestUpdate();
+            this.focusInputOnEdit();
+          }
+        },
+      },
+      {
+        kind: "method",
+        key: "onDeleteRow",
+        value: function onDeleteRow() {
+          if (this.selectedRow) {
+            const index = this.data.indexOf(this.selectedRow);
+            this.data.splice(index, 1);
+            this.unselect();
+            this.updatePageData();
+            this.dispatchEvent(
+              new CustomEvent("change", {
+                detail: {
+                  collection: JSON.stringify(this.data),
+                },
+              })
+            );
+            this.onChange(this.data);
+          }
+        },
+      },
+      {
+        kind: "method",
+        key: "onSaveRow",
+        value: function onSaveRow() {
+          if (!this.selectedRow) return;
+          if (this.editMode) {
+            this.editMode = false;
+            this.saveSelectedRow();
+            this.updatePageData();
+            this.onChange(this.data);
+          }
+        },
+      },
+      {
+        kind: "method",
+        key: "onDiscardRow",
+        value: function onDiscardRow() {
+          if (this.selectedRow) {
+            const editedRow = this.pageData.find((item) => item === this.selectedRow);
+            if (editedRow) {
+              this.columns.forEach((column) => {});
+              this.editMode = false;
+              this.editCell = null;
+              this.requestUpdate();
+              this.onChange(this.data);
             }
-          },
+          }
         },
-        {
-          kind: "method",
-          key: "focusInputOnEdit",
-          value: function focusInputOnEdit() {
-            setTimeout(() => {
-              const inputElement = this.shadowRoot?.querySelector(".selected")?.querySelector("input");
-              if (inputElement) inputElement.focus();
-            }, 50);
-          },
+      },
+      {
+        kind: "method",
+        key: "onChange",
+        value: function onChange(e) {
+          const value = e;
+          const args = {
+            bubbles: true,
+            cancelable: false,
+            composed: true,
+            detail: value,
+          };
+          const event = new CustomEvent("ntx-value-change", args);
+          this.dispatchEvent(event);
         },
-        // method handlers - custom
-        {
-          kind: "method",
-          key: "getRowNumber",
-          value: function getRowNumber(item) {
-            return this.data.indexOf(item) + 1;
-          },
+      },
+      {
+        kind: "method",
+        key: "onLoad",
+        value: function onLoad(e) {
+          console.info("data: " + this.data);
+          var dataCheck = this.data.toString();
+          if (dataCheck == null || dataCheck == "") {
+            this.onChange(this.collection);
+          }
         },
-        {
-          kind: "method",
-          key: "isDateField",
-          value: function isDateField(fieldName) {
-            return fieldName.toLowerCase().indexOf("datetime") > -1;
-          },
+      },
+      {
+        kind: "method",
+        key: "focusInputOnEdit",
+        value: function focusInputOnEdit() {
+          setTimeout(() => {
+            const inputElement = this.shadowRoot?.querySelector(".selected")?.querySelector("input");
+            if (inputElement) inputElement.focus();
+          }, 50);
         },
-        {
-          kind: "method",
-          key: "formatDate",
-          value: function formatDate(dateInput) {
-            let date;
-            if (dateInput instanceof Date) {
-              if (isNaN(dateInput.getTime())) {
-                throw new Error("Invalid Date object");
-              }
-              date = dateInput;
-            } else if (typeof dateInput === "string") {
-              date = new Date(dateInput);
-              if (isNaN(date.getTime())) {
-                throw new Error("Invalid date string");
-              }
-            } else {
-              throw new Error("Input must be a Date object or a date string");
+      },
+      // method handlers - custom
+      {
+        kind: "method",
+        key: "getRowNumber",
+        value: function getRowNumber(item) {
+          return this.data.indexOf(item) + 1;
+        },
+      },
+      {
+        kind: "method",
+        key: "isDateField",
+        value: function isDateField(fieldName) {
+          return fieldName.toLowerCase().indexOf("datetime") > -1;
+        },
+      },
+      {
+        kind: "method",
+        key: "formatDate",
+        value: function formatDate(dateInput) {
+          let date;
+          if (dateInput instanceof Date) {
+            if (isNaN(dateInput.getTime())) {
+              throw new Error("Invalid Date object");
             }
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, "0"); // zero-based month
-            const day = String(date.getDate()).padStart(2, "0");
-            const hours = String(date.getHours()).padStart(2, "0");
-            const minutes = String(date.getMinutes()).padStart(2, "0");
-            return `${year}-${month}-${day} ${hours}:${minutes}`;
-          },
+            date = dateInput;
+          } else if (typeof dateInput === "string") {
+            date = new Date(dateInput);
+            if (isNaN(date.getTime())) {
+              throw new Error("Invalid date string");
+            }
+          } else {
+            throw new Error("Input must be a Date object or a date string");
+          }
+          const year = date.getFullYear();
+          const month = String(date.getMonth() + 1).padStart(2, "0"); // zero-based month
+          const day = String(date.getDate()).padStart(2, "0");
+          const hours = String(date.getHours()).padStart(2, "0");
+          const minutes = String(date.getMinutes()).padStart(2, "0");
+          return `${year}-${month}-${day} ${hours}:${minutes}`;
         },
-      ],
-    };
-  },
-  s
-);
+      },
+      {
+        kind: "method",
+        key: "generateOptions",
+        value: function generateOptions(lookupLabels, lookupValues, lookupMapping, verbose = false) {
+          try {
+            if (!Array.isArray(lookupLabels) || !Array.isArray(lookupValues) || !Array.isArray(lookupMapping)) {
+              throw new Error("All inputs must be arrays.");
+            }
+
+            if (lookupLabels.length !== lookupValues.length || lookupLabels.length !== lookupMapping.length) {
+              throw new Error("Input arrays lookupLabels, lookupValues, and lookupMapping must have the same length.");
+            }
+
+            const result = {};
+
+            for (let i = 0; i < lookupMapping.length; i++) {
+              if (!Array.isArray(lookupLabels[i]) || !Array.isArray(lookupValues[i])) {
+                throw new Error(`Elements at index ${i} in lookupLabels and lookupValues must be arrays.`);
+              }
+
+              if (lookupLabels[i].length !== lookupValues[i].length) {
+                throw new Error(`Element count mismatch at index ${i}: lookupLabels has ${lookupLabels[i].length} elements, but lookupValues has ${lookupValues[i].length} elements.`);
+              }
+
+              result[lookupMapping[i]] = lookupLabels[i].map((label, index) => ({
+                label,
+                value: lookupValues[i][index],
+              }));
+            }
+
+            return result;
+          } catch (error) {
+            if (verbose) {
+              console.log("Validation error:", error.message);
+            }
+            alert(`Error: ${error.message}`);
+            throw error;
+          }
+        },
+      },
+    ],
+  };
+});
 
 export { AndysTable };
