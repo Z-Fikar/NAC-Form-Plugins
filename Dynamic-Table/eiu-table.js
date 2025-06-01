@@ -733,6 +733,122 @@ let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElemen
       },
       {
         kind: "method",
+        key: "renderDisplayField",
+        value: function renderDisplayField(item, column) {
+          let displayValue = item[column.field];
+          if (this.isDateField(column.field)) {
+            displayValue = formatDate(displayValue);
+          } else if (this.isSelectField(column.field)) {
+            let options = this.options[column.field];
+            displayValue = options.find((item) => item.value === displayValue) || displayValue;
+          }
+
+          let contentCell = y`<span class="table-cell-value">${item[column.field]}</span>`;
+
+          return contentCell;
+        },
+      },
+      {
+        kind: "method",
+        key: "renderEditField",
+        value: function renderEditField(item, column) {
+          let cellContent;
+
+          if (this.isDateField(column.field)) {
+            cellContent = this.renderDateTimeField(item, column);
+          } else if (this.isSelectField(column.field)) {
+            cellContent = this.renderSelectField(item, column);
+          } else {
+            cellContent = this.renderTextField(item, column);
+          }
+
+          return contentCell;
+        },
+      },
+      {
+        kind: "method",
+        key: "renderTextField",
+        value: function renderTextField(item, column) {
+          return y`
+            <input type="text" class="table-cell-input input-styled"
+              .value="${item[column.field]}"
+              ?disabled=${!!this.readOnly}
+              @input="${(event) => {
+                this.onCellEdit({ field: column.field, value: event.target.value });
+              }}"
+              @focus="${() => {
+                this.editCell = { columnName: column.field, row: item };
+                this.requestUpdate();
+              }}"
+              @blur="${() => {
+                if (this.editCell?.row === item) {
+                  this.editCell = { columnName: column.field, row: item };
+                  this.requestUpdate();
+                }
+              }}"
+            />
+          `;
+        },
+      },
+      {
+        kind: "method",
+        key: "renderDateTimeField",
+        value: function renderDateTimeField(item, column) {
+          return y`
+            <input type="datetime-local" class="table-cell-input input-styled"
+              .value="${item[column.field]}"
+              ?disabled=${!!this.readOnly}
+              @input="${(event) => {
+                this.onCellEdit({ field: column.field, value: this.formatDate(event.target.value) });
+              }}"
+              @focus="${() => {
+                this.editCell = { columnName: column.field, row: item };
+                this.requestUpdate();
+              }}"
+              @blur="${() => {
+                if (this.editCell?.row === item) {
+                  this.editCell = { columnName: column.field, row: item };
+                  this.requestUpdate();
+                }
+              }}"
+            />`;
+        },
+      },
+      {
+        kind: "method",
+        key: "renderSelectField",
+        value: function renderSelectField(item, column) {
+          const options = this.options[column.field] || [];
+
+          return y`
+            <select class="table-cell-input input-styled"
+              ?disabled=${!!this.readOnly}
+              @change="${(event) => {
+                this.onCellEdit({ field: column.field, value: event.target.value });
+              }}"
+              @focus="${() => {
+                this.editCell = { columnName: column.field, row: item };
+                this.requestUpdate();
+              }}"
+              @blur="${() => {
+                if (this.editCell?.row === item) {
+                  this.editCell = { columnName: column.field, row: item };
+                  this.requestUpdate();
+                }
+              }}"
+            >
+              ${options.map(
+                (option) => y`
+                  <option value="${option.value}" ?selected="${option.value === item[column.field]}">
+                    ${option.label}
+                  </option>
+                `
+              )}
+            </select>`;
+        },
+      },
+      {
+        kind: "method",
         key: "renderTable",
         value: function renderTable() {
           let start = (this.currentPage - 1) * this.pageSize;
@@ -741,144 +857,93 @@ let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElemen
           console.log("PAGE DATA", start, end, this.pageData);
 
           return y`
-              <div class="table-wrapper">
-                <table>
-                  <thead>
-                    <tr>
-                      ${this.rowNumber ? y`<th style="text-align: right">No</th>` : null}
-                      ${this.columns.map(
-                        (column) => y`
-                          <th @click="${() => this.onSortClick(column.field)}">
-                            ${y`<span class="flex-item">
-                              ${column.label}
-                              ${
-                                this.tableSort.direction === "asc"
-                                  ? y`<svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
-                                    height="18px"
-                                    width="18px"
-                                    opacity="0"
-                                    class="margin-left-4 ${this.tableSort.field === column.field ? "opacity" : ""}"
-                                  >
-                                    <path
-                                      d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
-                                    />
-                                  </svg>`
-                                  : y`<svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
-                                    height="18px"
-                                    width="18px"
-                                    opacity="0"
-                                    class="margin-left-4 dsc ${this.tableSort.field === column.field ? "opacity" : ""}"
-                                  >
-                                    <path
-                                      d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
-                                    />
-                                  </svg>`
-                              }
-                            </span>`}
-                          </th>
-                        `
-                      )}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    ${this.pageData.map(
-                      (item) => y`
-                        <tr
-                          @click="${() => {
-                            if (this.readOnly) return;
-                            if (this.editMode && this.selectedRow !== item) {
-                              this.unselect();
-                            }
-                            if (!this.editMode && this.selectedRow === item) {
-                              this.selectedRow = null;
-                            } else {
-                              this.selectedRow = item;
-                            }
-                            this.requestUpdate();
-                          }}"
-                          class="table-row ${this.editMode && this.selectedRow === item ? "edit" : ""} ${this.selectedRow === item ? "selected" : ""}"
-                        >
-                          ${this.rowNumber ? y`<td style="text-align: right">${this.getRowNumber(item)}</td>` : null}
-                          ${this.columns.map(
-                            (column) => y`
-                          <td>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    ${this.rowNumber ? y`<th style="text-align: right">No</th>` : null}
+                    ${this.columns.map(
+                      (column) => y`
+                        <th @click="${() => this.onSortClick(column.field)}">
+                          ${y`<span class="flex-item">
+                            ${column.label}
                             ${
-                              this.editMode && this.selectedRow === item
-                                ? this.isDateField(column.field)
-                                  ? y`<input
-                                          type="datetime-local"
-                                          .value="${item[column.field]}"
-                                          class="table-cell-input input-styled"
-                                          @input="${(event) =>
-                                            this.onCellEdit({
-                                              field: column.field,
-                                              value: this.formatDate(event.target.value),
-                                            })}"
-                                          @focus="${() => {
-                                            this.editCell = {
-                                              columnName: column.field,
-                                              row: item,
-                                            };
-                                            this.requestUpdate();
-                                          }}"
-                                          @blur="${() => {
-                                            if (this.editCell?.row === item) {
-                                              this.editCell = {
-                                                columnName: column.field,
-                                                row: item,
-                                              };
-                                              this.requestUpdate();
-                                            }
-                                          }}"
-                                          ?disabled=${!!this.readOnly}
-                                        />`
-                                  : y`<input
-                                          type="text"
-                                          .value="${item[column.field]}"
-                                          class="table-cell-input input-styled"
-                                          @input="${(event) =>
-                                            this.onCellEdit({
-                                              field: column.field,
-                                              value: event.target.value,
-                                            })}"
-                                          @focus="${() => {
-                                            this.editCell = {
-                                              columnName: column.field,
-                                              row: item,
-                                            };
-                                            this.requestUpdate();
-                                          }}"
-                                          @blur="${() => {
-                                            if (this.editCell?.row === item) {
-                                              this.editCell = {
-                                                columnName: column.field,
-                                                row: item,
-                                              };
-                                              this.requestUpdate();
-                                            }
-                                          }}"
-                                          ?disabled=${!!this.readOnly}
-                                        />`
-                                : y`<span class="table-cell-value"
-                                  >${item[column.field]}</span
-                                >`
+                              this.tableSort.direction === "asc"
+                                ? y`<svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  height="18px"
+                                  width="18px"
+                                  opacity="0"
+                                  class="margin-left-4 ${this.tableSort.field === column.field ? "opacity" : ""}"
+                                >
+                                  <path
+                                    d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
+                                  />
+                                </svg>`
+                                : y`<svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  height="18px"
+                                  width="18px"
+                                  opacity="0"
+                                  class="margin-left-4 dsc ${this.tableSort.field === column.field ? "opacity" : ""}"
+                                >
+                                  <path
+                                    d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z"
+                                  />
+                                </svg>`
                             }
-                          </td>
-                        `
-                          )}
-                        </tr>
+                          </span>`}
+                        </th>
                       `
                     )}
-                  </tbody>
-                </table>
-              </div>
-              ${this.onLoad(this.collection)}
-              ${this.totalPages > 1 ? this.renderPagination() : null}
-            `;
+                  </tr>
+                </thead>
+                <tbody>
+                  ${this.pageData.map(
+                    (item) => y`
+                      <tr
+                        @click="${() => {
+                          if (this.readOnly) return;
+                          if (this.editMode && this.selectedRow !== item) {
+                            this.unselect();
+                          }
+                          if (!this.editMode && this.selectedRow === item) {
+                            this.selectedRow = null;
+                          } else {
+                            this.selectedRow = item;
+                          }
+                          this.requestUpdate();
+                        }}"
+                        class="table-row ${this.editMode && this.selectedRow === item ? "edit" : ""} ${this.selectedRow === item ? "selected" : ""}"
+                      >
+                        ${this.rowNumber ? y`<td style="text-align: right">${this.getRowNumber(item)}</td>` : null}
+                        ${this.columns.map((column) => {
+                          let cellContent;
+
+                          if (this.editMode && this.selectedRow === item) {
+                            this.renderEditField(item, column);
+                          } else {
+                            this.renderDisplayField(item, column);
+                          }
+
+                          return y`
+                            <td>
+                              ${cellContent}
+                            </td>
+                          `;
+                        })}
+
+                      </tr>
+                    `
+                  )}
+                </tbody>
+              </table>
+            </div>
+            ${this.onLoad(this.collection)}
+            ${this.totalPages > 1 ? this.renderPagination() : null}
+          `;
         },
       },
       {
@@ -1226,8 +1291,8 @@ let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElemen
       },
       {
         kind: "method",
-        key: "isOptionField",
-        value: function isOptionField(keyToCheck) {
+        key: "isSelectField",
+        value: function isSelectField(keyToCheck) {
           let dataObj = this.options;
           if (!dataObj || typeof dataObj !== "object" || typeof keyToCheck !== "string") {
             return false;
