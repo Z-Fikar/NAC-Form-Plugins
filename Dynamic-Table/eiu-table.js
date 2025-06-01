@@ -742,14 +742,12 @@ let AndysTable = _decorate(
         key: "renderDisplayField",
         value: function renderDisplayField(item, column) {
           console.log("renderDisplayField", item, column);
-          let displayValue;
+          let displayValue = item[column.field];
           if (this.isDateField(column.field)) {
             displayValue = this.formatDate(displayValue);
           } else if (this.isSelectField(column.field)) {
             let options = this.options[column.field];
             displayValue = options.find((item) => item.value === displayValue) || displayValue;
-          } else {
-            displayValue = item[column.field];
           }
           console.log("renderDisplayField", displayValue);
 
