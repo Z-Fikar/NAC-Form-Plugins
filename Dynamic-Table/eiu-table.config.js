@@ -39,14 +39,23 @@ const config = {
     lookupLabels: {
       type: "string",
       title: "Lookup Labels",
+      defaultValue: JSON.stringify([
+        ["satu", "dua", "tiga"],
+        ["empat", "lima", "enam"],
+      ]),
     },
     lookupValues: {
       type: "string",
       title: "Lookup Values",
+      defaultValue: JSON.stringify([
+        [1, 2, 3],
+        [4, 5, 6],
+      ]),
     },
     lookupMapping: {
       type: "string",
       title: "Lookup Mapping",
+      defaultValue: JSON.stringify(["Event", "Options"]),
     },
   },
 };

@@ -417,6 +417,7 @@ let AndysTable = _decorate(
     return {
       F: AndysTable,
       d: [
+        // field handlers
         {
           kind: "field",
           static: true,
@@ -565,6 +566,7 @@ let AndysTable = _decorate(
             return null;
           },
         },
+        // get handlers
         {
           kind: "get",
           key: "filteredData",
@@ -603,6 +605,7 @@ let AndysTable = _decorate(
             });
           },
         },
+        // method handlers - main
         {
           kind: "method",
           key: "updated",
@@ -625,100 +628,7 @@ let AndysTable = _decorate(
             return import("./eiu-table.config.js").then((x) => x.config);
           },
         },
-        {
-          kind: "method",
-          key: "unselect",
-          value: function unselect() {
-            this.selectedRow = null;
-            this.editMode = false;
-            this.tempEditRowData = null;
-            this.editCell = null;
-          },
-        },
-        {
-          kind: "method",
-          key: "getRowNumber",
-          value: function getRowNumber(item) {
-            return this.data.indexOf(item) + 1;
-          },
-        },
-        {
-          kind: "method",
-          key: "isDateField",
-          value: function isDateField(fieldName) {
-            return fieldName.toLowerCase().indexOf("datetime") > -1;
-          },
-        },
-        {
-          kind: "method",
-          key: "formatDate",
-          value: function formatDate(dateInput) {
-            let date;
-            if (dateInput instanceof Date) {
-              if (isNaN(dateInput.getTime())) {
-                throw new Error("Invalid Date object");
-              }
-              date = dateInput;
-            } else if (typeof dateInput === "string") {
-              date = new Date(dateInput);
-              if (isNaN(date.getTime())) {
-                throw new Error("Invalid date string");
-              }
-            } else {
-              throw new Error("Input must be a Date object or a date string");
-            }
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, "0"); // zero-based month
-            const day = String(date.getDate()).padStart(2, "0");
-            const hours = String(date.getHours()).padStart(2, "0");
-            const minutes = String(date.getMinutes()).padStart(2, "0");
-            return `${year}-${month}-${day} ${hours}:${minutes}`;
-          },
-        },
-        {
-          kind: "method",
-          key: "onSortClick",
-          value: function onSortClick(field) {
-            const { direction } = this.tableSort;
-            this.unselect();
-            if (this.tableSort.field === field) {
-              this.tableSort.direction = direction === "asc" ? "desc" : "asc";
-            } else {
-              this.tableSort = {
-                field: field,
-                direction: "asc",
-              };
-            }
-            this.currentPage = 1;
-            this.updatePageData();
-          },
-        },
-        {
-          kind: "method",
-          key: "onPageChange",
-          value: function onPageChange(page) {
-            this.unselect();
-            if (page >= 1 && page <= this.totalPages) {
-              this.currentPage = page;
-              this.updatePageData();
-            }
-          },
-        },
-        {
-          kind: "method",
-          key: "onCellEdit",
-          value: function onCellEdit({ field, value }) {
-            if (this.editCell) {
-              const found = this.tempEditRowData || this.pageData.find((item) => item === this.editCell?.row);
-              if (!found) return;
-              const editedRow = {
-                ...found,
-              };
-              editedRow[field] = value;
-              this.tempEditRowData = editedRow;
-            }
-          },
-        },
+        // method handlers - render
         {
           kind: "method",
           key: "render",
@@ -1020,6 +930,17 @@ let AndysTable = _decorate(
             `;
           },
         },
+        // method handlers - table function
+        {
+          kind: "method",
+          key: "unselect",
+          value: function unselect() {
+            this.selectedRow = null;
+            this.editMode = false;
+            this.tempEditRowData = null;
+            this.editCell = null;
+          },
+        },
         {
           kind: "method",
           key: "saveSelectedRow",
@@ -1050,6 +971,50 @@ let AndysTable = _decorate(
               this.currentPage = 1;
             }
             this.requestUpdate();
+          },
+        },
+        {
+          kind: "method",
+          key: "onSortClick",
+          value: function onSortClick(field) {
+            const { direction } = this.tableSort;
+            this.unselect();
+            if (this.tableSort.field === field) {
+              this.tableSort.direction = direction === "asc" ? "desc" : "asc";
+            } else {
+              this.tableSort = {
+                field: field,
+                direction: "asc",
+              };
+            }
+            this.currentPage = 1;
+            this.updatePageData();
+          },
+        },
+        {
+          kind: "method",
+          key: "onPageChange",
+          value: function onPageChange(page) {
+            this.unselect();
+            if (page >= 1 && page <= this.totalPages) {
+              this.currentPage = page;
+              this.updatePageData();
+            }
+          },
+        },
+        {
+          kind: "method",
+          key: "onCellEdit",
+          value: function onCellEdit({ field, value }) {
+            if (this.editCell) {
+              const found = this.tempEditRowData || this.pageData.find((item) => item === this.editCell?.row);
+              if (!found) return;
+              const editedRow = {
+                ...found,
+              };
+              editedRow[field] = value;
+              this.tempEditRowData = editedRow;
+            }
           },
         },
         {
@@ -1173,6 +1138,47 @@ let AndysTable = _decorate(
               const inputElement = this.shadowRoot?.querySelector(".selected")?.querySelector("input");
               if (inputElement) inputElement.focus();
             }, 50);
+          },
+        },
+        // method handlers - custom
+        {
+          kind: "method",
+          key: "getRowNumber",
+          value: function getRowNumber(item) {
+            return this.data.indexOf(item) + 1;
+          },
+        },
+        {
+          kind: "method",
+          key: "isDateField",
+          value: function isDateField(fieldName) {
+            return fieldName.toLowerCase().indexOf("datetime") > -1;
+          },
+        },
+        {
+          kind: "method",
+          key: "formatDate",
+          value: function formatDate(dateInput) {
+            let date;
+            if (dateInput instanceof Date) {
+              if (isNaN(dateInput.getTime())) {
+                throw new Error("Invalid Date object");
+              }
+              date = dateInput;
+            } else if (typeof dateInput === "string") {
+              date = new Date(dateInput);
+              if (isNaN(date.getTime())) {
+                throw new Error("Invalid date string");
+              }
+            } else {
+              throw new Error("Input must be a Date object or a date string");
+            }
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, "0"); // zero-based month
+            const day = String(date.getDate()).padStart(2, "0");
+            const hours = String(date.getHours()).padStart(2, "0");
+            const minutes = String(date.getMinutes()).padStart(2, "0");
+            return `${year}-${month}-${day} ${hours}:${minutes}`;
           },
         },
       ],
