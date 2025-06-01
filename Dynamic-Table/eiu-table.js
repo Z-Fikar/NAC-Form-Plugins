@@ -741,6 +741,7 @@ let AndysTable = _decorate(
         kind: "method",
         key: "renderDisplayField",
         value: function renderDisplayField(item, column) {
+          console.log("renderDisplayField", item, column);
           let displayValue = item[column.field];
           if (this.isDateField(column.field)) {
             displayValue = this.formatDate(displayValue);
@@ -748,6 +749,7 @@ let AndysTable = _decorate(
             let options = this.options[column.field];
             displayValue = options.find((item) => item.value === displayValue) || displayValue;
           }
+          console.log("renderDisplayField", displayValue);
 
           return y`<span class="table-cell-value">${displayValue}</span>`;
         },
@@ -756,6 +758,7 @@ let AndysTable = _decorate(
         kind: "method",
         key: "renderEditField",
         value: function renderEditField(item, column) {
+          console.log("renderEditField", item, column);
           let cellContent;
 
           if (this.isDateField(column.field)) {
@@ -766,6 +769,7 @@ let AndysTable = _decorate(
             cellContent = this.renderTextField(item, column);
           }
 
+          console.log("renderEditField", cellContent);
           return cellContent;
         },
       },
@@ -1236,7 +1240,7 @@ let AndysTable = _decorate(
         kind: "method",
         key: "onLoad",
         value: function onLoad(e) {
-          console.info("data: " + this.data);
+          console.log("data: ", this.data);
           var dataCheck = this.data.toString();
           if (dataCheck == null || dataCheck == "") {
             this.onChange(this.collection);
