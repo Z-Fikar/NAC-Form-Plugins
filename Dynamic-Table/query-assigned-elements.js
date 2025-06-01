@@ -38,17 +38,25 @@ function _toPropertyKey(arg) {
   return typeof key === "symbol" ? key : String(key);
 }
 function _decorate(decorators, factory, superClass, mixins) {
+  console.log("SATU");
   var api = _getDecoratorsApi();
   if (mixins) {
     for (var i = 0; i < mixins.length; i++) {
       api = mixins[i](api);
     }
   }
+
+  console.log("DUA");
   var r = factory(function initialize(O) {
     api.initializeInstanceElements(O, decorated.elements);
   }, superClass);
+
+  console.log("TIGA");
   var decorated = api.decorateClass(_coalesceClassElements(r.d.map(_createElementDescriptor)), decorators);
+
+  console.log("EMPAT");
   api.initializeClassElements(r.F, decorated.elements);
+  console.log("LIMA");
   return api.runClassFinishers(r.F, decorated.finishers);
 }
 function _getDecoratorsApi() {
