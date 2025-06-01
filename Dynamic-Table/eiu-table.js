@@ -743,7 +743,7 @@ let AndysTable = _decorate(
         value: function renderDisplayField(item, column) {
           let displayValue = item[column.field];
           if (this.isDateField(column.field)) {
-            displayValue = formatDate(displayValue);
+            displayValue = this.formatDate(displayValue);
           } else if (this.isSelectField(column.field)) {
             let options = this.options[column.field];
             displayValue = options.find((item) => item.value === displayValue) || displayValue;
