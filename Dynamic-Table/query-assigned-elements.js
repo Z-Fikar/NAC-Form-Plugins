@@ -46,8 +46,9 @@ function _decorate(decorators, factory, superClass, mixins) {
     }
   }
 
-  console.log("DUA");
+  console.log("DUA", factory, superClass);
   var r = factory(function initialize(O) {
+    console.log("DUA FACTORY", api, O, decorated.elements);
     api.initializeInstanceElements(O, decorated.elements);
   }, superClass);
 
@@ -66,8 +67,10 @@ function _getDecoratorsApi() {
   var api = {
     elementsDefinitionOrder: [["method"], ["field"]],
     initializeInstanceElements: function (O, elements) {
+      console.log("DUA INIT", O, elements);
       ["method", "field"].forEach(function (kind) {
         elements.forEach(function (element) {
+          console.log("DUA INIT ELEMENT", element);
           if (element.kind === kind && element.placement === "own") {
             this.defineClassElement(O, element);
           }
@@ -87,6 +90,7 @@ function _getDecoratorsApi() {
       }, this);
     },
     defineClassElement: function (receiver, element) {
+      console.log("DUA DEFINE ELEMENT", receiver, element);
       var descriptor = element.descriptor;
       if (element.kind === "field") {
         var initializer = element.initializer;
