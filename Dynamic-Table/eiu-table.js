@@ -1354,9 +1354,13 @@ let AndysTable = _decorate([e$1("eiu-table")], function (_initialize, _LitElemen
       },
     },
   ];
+  let allHandlers = [...fieldHandlers, ...getHandlers, ...mainHandlers, ...renderHandlers, ...tableHandlers, ...functionHandlers];
+  console.log("F", AndysTable);
+  console.log("d", allHandlers);
+
   return {
     F: AndysTable,
-    d: [...fieldHandlers, ...getHandlers, ...mainHandlers, ...renderHandlers, ...tableHandlers, ...functionHandlers],
+    d: allHandlers,
   };
 });
 
