@@ -445,6 +445,42 @@ let AndysTable = _decorate(
               type: String,
             }),
           ],
+          key: "lookupLabels",
+          value() {
+            return "";
+          },
+        },
+        {
+          kind: "field",
+          decorators: [
+            e({
+              type: String,
+            }),
+          ],
+          key: "lookupValues",
+          value() {
+            return "";
+          },
+        },
+        {
+          kind: "field",
+          decorators: [
+            e({
+              type: String,
+            }),
+          ],
+          key: "lookupMapping",
+          value() {
+            return "";
+          },
+        },
+        {
+          kind: "field",
+          decorators: [
+            e({
+              type: String,
+            }),
+          ],
           key: "rowNumber",
           value() {
             return false;
@@ -491,6 +527,13 @@ let AndysTable = _decorate(
           key: "data",
           value() {
             return [];
+          },
+        },
+        {
+          kind: "field",
+          key: "options",
+          value() {
+            return null;
           },
         },
         {
