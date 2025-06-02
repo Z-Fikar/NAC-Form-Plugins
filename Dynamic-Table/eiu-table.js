@@ -1209,6 +1209,7 @@ let AndysTable = _decorate(
             this.saveSelectedRow();
             this.updatePageData();
             this.onChange(this.data);
+            this.unselect();
           }
         },
       },
@@ -1224,6 +1225,7 @@ let AndysTable = _decorate(
               this.editCell = null;
               this.requestUpdate();
               this.onChange(this.data);
+              this.unselect();
             }
           }
         },
