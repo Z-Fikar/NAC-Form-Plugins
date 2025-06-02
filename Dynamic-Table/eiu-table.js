@@ -745,10 +745,12 @@ let AndysTable = _decorate(
           let displayValue = item[column.field];
           // if (this.isDateField(column.field)) {
           //   displayValue = this.formatDate(displayValue);
-          // } else if (this.isSelectField(column.field)) {
-          //   let options = this.options[column.field];
-          //   displayValue = options.find((item) => item.value === displayValue) || displayValue;
-          // }
+          // } else
+          if (this.isSelectField(column.field)) {
+            let options = this.options[column.field];
+            displayValue = options.find((item) => item.value === displayValue);
+            displayValue = displayValue.label;
+          }
           console.log("renderDisplayField", displayValue);
 
           return y`<span class="table-cell-value">${displayValue}</span>`;
