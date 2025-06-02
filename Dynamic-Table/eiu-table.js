@@ -831,6 +831,8 @@ let AndysTable = _decorate(
         key: "renderSelectField",
         value: function renderSelectField(item, column) {
           const options = this.options[column.field] || [];
+          // Check if the current value exists in the options
+          const isValueInOptions = options.some((option) => option.value.toString() === item[column.field].toString());
 
           return y`
           <select class="table-cell-input input-styled"
@@ -850,12 +852,12 @@ let AndysTable = _decorate(
               }
             }}"
           >
-            <option value="" ?selected="${!item[column.field]}" disabled>Please select</option>
+            <option value="" ?selected="${!isValueInOptions}" disabled>Please select</option>
             ${options.map(
               (option) => y`
                 <option 
                   value="${option.value}" 
-                  ?selected="${option.value.toString() === item[column.field.toString()]}"
+                  ?selected="${option.value.toString() === item[column.field].toString()}"
                 >
                   ${option.label}
                 </option>
