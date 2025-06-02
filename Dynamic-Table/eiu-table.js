@@ -748,7 +748,7 @@ let AndysTable = _decorate(
           // } else
           if (this.isSelectField(column.field)) {
             let options = this.options[column.field];
-            let selected = options.find((item) => item.value === displayValue);
+            let selected = options.find((item) => item.value.toString() === displayValue.toString());
             selected = selected || { label: displayValue, value: displayValue };
             console.log("DISPLAY", "SELECT", displayValue, options, selected);
             displayValue = selected.label;
