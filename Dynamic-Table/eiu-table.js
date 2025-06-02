@@ -834,6 +834,7 @@ let AndysTable = _decorate(
 
           return y`
           <select class="table-cell-input input-styled"
+            style="background: white;"
             ?disabled=${!!this.readOnly}
             @change="${(event) => {
               this.onCellEdit({ field: column.field, value: event.target.value });
