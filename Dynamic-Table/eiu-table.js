@@ -853,7 +853,7 @@ let AndysTable = _decorate(
               (option) => y`
                 <option 
                   value="${option.value}" 
-                  ?selected="${option.value === item[column.field]}"
+                  ?selected="${option.value.toString() === item[column.field.toString()]}"
                 >
                   ${option.label}
                 </option>
