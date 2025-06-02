@@ -749,8 +749,9 @@ let AndysTable = _decorate(
           if (this.isSelectField(column.field)) {
             let options = this.options[column.field];
             let selected = options.find((item) => item.value === displayValue);
-            console.log("DISPLAY", "SELECT", selected, options);
-            displayValue = selected.label || displayValue;
+            selected = selected || { label: displayValue, value: displayValue };
+            console.log("DISPLAY", "SELECT", displayValue, options, selected);
+            displayValue = selected.label;
           }
           console.log("renderDisplayField", displayValue);
 
