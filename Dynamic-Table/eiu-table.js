@@ -850,6 +850,7 @@ let AndysTable = _decorate(
               }
             }}"
           >
+            <option value="" ?selected="${!item[column.field]}" disabled>Please select</option>
             ${options.map(
               (option) => y`
                 <option 
