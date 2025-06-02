@@ -743,12 +743,12 @@ let AndysTable = _decorate(
         value: function renderDisplayField(item, column) {
           console.log("renderDisplayField", item, column);
           let displayValue = item[column.field];
-          if (this.isDateField(column.field)) {
-            displayValue = this.formatDate(displayValue);
-          } else if (this.isSelectField(column.field)) {
-            let options = this.options[column.field];
-            displayValue = options.find((item) => item.value === displayValue) || displayValue;
-          }
+          // if (this.isDateField(column.field)) {
+          //   displayValue = this.formatDate(displayValue);
+          // } else if (this.isSelectField(column.field)) {
+          //   let options = this.options[column.field];
+          //   displayValue = options.find((item) => item.value === displayValue) || displayValue;
+          // }
           console.log("renderDisplayField", displayValue);
 
           return y`<span class="table-cell-value">${displayValue}</span>`;
@@ -847,7 +847,10 @@ let AndysTable = _decorate(
           >
             ${options.map(
               (option) => y`
-                <option value="${option.value}" ?selected="${option.value === item[column.field]}">
+                <option 
+                  value="${option.value}" 
+                  ?selected="${option.value === item[column.field]}"
+                >
                   ${option.label}
                 </option>
               `
