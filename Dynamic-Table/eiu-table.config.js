@@ -12,7 +12,7 @@ const config = {
     description: true,
     visibility: true,
   },
-  version: "1.0",
+  version: "2.0",
   properties: {
     collection: {
       type: "string",
