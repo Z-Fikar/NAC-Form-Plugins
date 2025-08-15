@@ -10,7 +10,7 @@ const baseStyle = i`
 const NacTableStyles = i`
 .table-wrapper {
   border-radius: 4px;
-  overflow: hidden;
+  overflow-x: scroll;
   border: 1px solid #ccc;
 }
 table {
@@ -36,6 +36,7 @@ td {
   text-align: left;
   vertical-align: middle;
   position: relative;
+  min-width: 100px;
 }
 
 th {
